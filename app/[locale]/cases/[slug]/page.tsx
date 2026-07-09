@@ -1,29 +1,47 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
-import { cases, getCaseBySlug } from "@/lib/cases";
+import { getCases, getCaseBySlug, getCaseSlugs } from "@/lib/cases";
+import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
 import { Nav } from "@/components/nav";
 import { Lightbox } from "@/components/lightbox";
 
 export function generateStaticParams() {
-  return cases.map((c) => ({ slug: c.slug }));
+  return getCaseSlugs().map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const c = getCaseBySlug(slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale: rawLocale, slug } = await params;
+  if (!hasLocale(rawLocale)) return {};
+  const c = getCaseBySlug(slug, rawLocale);
   if (!c) return {};
+  const dict = getDictionary(rawLocale);
   return {
-    title: `${c.title}, Henrique Alencar`,
+    title: `${c.title} ${dict.case.titleSuffix}`,
     description: c.description,
+    alternates: {
+      languages: Object.fromEntries(locales.map((l) => [l, `/${l}/cases/${slug}`])),
+    },
   };
 }
 
-export default async function CasePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const c = getCaseBySlug(slug);
+export default async function CasePage({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale: rawLocale, slug } = await params;
+  if (!hasLocale(rawLocale)) notFound();
+  const locale: Locale = rawLocale;
+  const dict = getDictionary(locale);
+  const c = getCaseBySlug(slug, locale);
   if (!c) notFound();
 
+  const cases = getCases(locale);
   const currentIndex = cases.findIndex((x) => x.slug === slug);
   const next = cases[(currentIndex + 1) % cases.length];
 
@@ -38,12 +56,14 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
       {/* Nav */}
       <Nav
-        logo="henrique.alencar"
+        locale={locale}
         links={[
-          { label: "Cases", href: "/#cases" },
-          { label: "About", href: "/#about" },
-          { label: "Contact", href: "mailto:henrique.alencarr@gmail.com" },
+          { label: dict.nav.services, href: `/${locale}#services` },
+          { label: dict.nav.cases, href: `/${locale}#cases` },
+          { label: dict.nav.about, href: `/${locale}#about` },
+          { label: dict.nav.contact, href: `/${locale}#contact` },
         ]}
+        menuFooter={dict.nav.menuFooter}
       />
 
       <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-10 sm:py-20">
@@ -66,7 +86,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
           {/* Main content */}
           <div className="lg:col-span-2 space-y-10 sm:space-y-14">
             <section>
-              <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">Overview</p>
+              <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.case.overview}</p>
               <p className="text-base sm:text-lg text-zinc-300 leading-relaxed">{c.description}</p>
             </section>
 
@@ -86,7 +106,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
             )}
 
             <section>
-              <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-4 sm:mb-6">Technical Highlights</p>
+              <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-4 sm:mb-6">{dict.case.technicalHighlights}</p>
               <ul className="space-y-4">
                 {c.highlights.map((h, i) => (
                   <li key={i} className="flex gap-3 sm:gap-4 items-start text-zinc-300">
@@ -106,7 +126,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
           {/* Sidebar */}
           <div className="space-y-4 sm:space-y-6">
             <div className="glass-card gradient-border rounded-2xl p-5 sm:p-6">
-              <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Tech Stack</p>
+              <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">{dict.case.techStack}</p>
               <div className="flex flex-wrap gap-2">
                 {c.stack.map((tech) => (
                   <span
@@ -126,16 +146,16 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
               className="glass-card gradient-border rounded-2xl p-5 sm:p-6 block hover:border-zinc-500 transition-colors"
             >
               <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">
-                Build something similar?
+                {dict.case.ctaTitle}
               </p>
               <p className="text-sm text-zinc-400 mb-4 sm:mb-5">
-                Let&apos;s talk about your automation needs.
+                {dict.case.ctaSubtitle}
               </p>
               <span
                 className="inline-flex items-center justify-center w-full gap-2 px-4 py-3 rounded-lg font-medium text-sm text-white"
                 style={{ background: "linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)" }}
               >
-                Get in touch
+                {dict.case.ctaButton}
               </span>
             </a>
           </div>
@@ -143,9 +163,9 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
         {/* Next case */}
         <div className="mt-16 sm:mt-24 pt-10 border-t border-zinc-800/50">
-          <p className="text-base font-mono font-bold text-purple-400 uppercase tracking-widest mb-4">Next Case</p>
+          <p className="text-base font-mono font-bold text-purple-400 uppercase tracking-widest mb-4">{dict.case.nextCase}</p>
           <Link
-            href={`/cases/${next.slug}`}
+            href={`/${locale}/cases/${next.slug}`}
             className="glass-card gradient-border rounded-2xl p-6 sm:p-10 flex items-center justify-between gap-4 sm:gap-6 hover:bg-white/[0.06] transition-all duration-300 group"
           >
             <div>
@@ -166,8 +186,8 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
       {/* Footer */}
       <footer className="relative z-10 border-t border-zinc-800/50 px-4 sm:px-8 py-10 sm:py-12 mt-10 sm:mt-20">
         <div className="max-w-screen-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
-          <span className="font-mono text-sm sm:text-base text-zinc-400">Henrique Alencar, São Paulo, Brazil</span>
-          <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-zinc-400 font-bold tracking-wide">AI &amp; Systems Automation Engineer</span>
+          <span className="font-mono text-sm sm:text-base text-zinc-400">Right<span className="text-white font-semibold">Flows</span></span>
+          <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-zinc-400 font-bold tracking-wide">{dict.footer.tagline}</span>
         </div>
       </footer>
     </main>
