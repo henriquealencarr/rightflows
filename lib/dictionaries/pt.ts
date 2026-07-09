@@ -26,8 +26,8 @@ export const pt: Dictionary = {
   },
   hero: {
     badge: "Aceitando novos clientes",
-    headlineLine1: "Automações de IA que rodam",
-    headlineLine2: "sua empresa, não só seus fluxos.",
+    headlineLine1: "Seu time produzindo",
+    headlineLine2: "com máxima eficiência.",
     subhead:
       "A RightFlows projeta e entrega sistemas completos de automação com IA para empresas de todos os portes. A gente não só conecta ferramentas — entregamos sistemas operacionais com interface, agentes, e clientes reais usando todos os dias.",
     ctaCases: "Ver Cases",
