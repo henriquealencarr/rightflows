@@ -29,7 +29,7 @@ export const pt: Dictionary = {
     headlineLine1: "Seu time produzindo",
     headlineLine2: "com máxima eficiência.",
     subhead:
-      "A RightFlows projeta e entrega sistemas completos de automação com IA para empresas de todos os portes. A gente não só conecta ferramentas — entregamos sistemas operacionais com interface, agentes, e clientes reais usando todos os dias.",
+      "18 anos vendendo e 200 projetos de IA entregues. Plug and play na sua operação.",
     ctaCases: "Ver Cases",
     ctaContact: "Fale conosco",
   },
