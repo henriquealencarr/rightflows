@@ -2,21 +2,23 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import type { Locale } from "@/lib/i18n";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 interface NavProps {
-  logo: string;
+  locale: Locale;
   links: { label: string; href: string }[];
+  menuFooter: string;
 }
 
-export function Nav({ logo, links }: NavProps) {
+export function Nav({ locale, links, menuFooter }: NavProps) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
       <nav className="relative z-50 flex items-center justify-between px-4 sm:px-8 py-5 sm:py-7 max-w-screen-2xl mx-auto">
-        <a href="/" className="flex items-center text-zinc-300 hover:text-white transition-colors">
-          <Image src="/logo_henrique2.png" alt={logo} width={240} height={240} className="rounded-md h-12 w-auto sm:h-16 sm:w-auto" />
+        <a href={`/${locale}`} className="flex items-center text-xl sm:text-2xl font-bold tracking-tight text-zinc-100 hover:text-white transition-colors">
+          Right<span className="gradient-text">Flows</span>
         </a>
 
         {/* Desktop links */}
@@ -26,6 +28,7 @@ export function Nav({ logo, links }: NavProps) {
               {l.label}
             </a>
           ))}
+          <LanguageSwitcher locale={locale} />
         </div>
 
         {/* Hamburger button */}
@@ -81,6 +84,15 @@ export function Nav({ logo, links }: NavProps) {
                   {l.label}
                 </motion.a>
               ))}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 12 }}
+                transition={{ delay: 0.05 + links.length * 0.08, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-6"
+              >
+                <LanguageSwitcher locale={locale} className="text-lg" />
+              </motion.div>
             </div>
 
             {/* Bottom label */}
@@ -90,7 +102,7 @@ export function Nav({ logo, links }: NavProps) {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.35 }}
             >
-              henrique.alencar
+              {menuFooter}
             </motion.p>
           </motion.div>
         )}

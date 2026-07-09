@@ -1,10 +1,12 @@
 import Link from "next/link";
-import Image from "next/image";
+import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
-import { cases } from "@/lib/cases";
+import { getCases } from "@/lib/cases";
+import { getServices } from "@/lib/services";
+import { getDictionary, hasLocale, type Locale } from "@/lib/i18n";
 import { AnimateIn, AnimateInHero, AnimateInStagger, AnimateInCard } from "@/components/animate-in";
 import { Nav } from "@/components/nav";
-import { CoinFlipPhoto } from "@/components/coin-flip-photo";
+import { HeroVisual } from "@/components/hero-visual";
 
 const stack = [
   "n8n", "Make", "GPT", "Claude", "Gemini",
@@ -15,7 +17,14 @@ const stack = [
   "HubSpot", "Clay", "LangChain", "LangGraph",
 ];
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale: rawLocale } = await params;
+  if (!hasLocale(rawLocale)) notFound();
+  const locale: Locale = rawLocale;
+  const dict = getDictionary(locale);
+  const cases = getCases(locale);
+  const services = getServices(locale);
+
   return (
     <main className="relative overflow-hidden">
       {/* Background glows */}
@@ -27,12 +36,14 @@ export default function Home() {
 
       {/* Nav */}
       <Nav
-        logo="henrique.alencar"
+        locale={locale}
         links={[
-          { label: "Cases", href: "#cases" },
-          { label: "About", href: "#about" },
-          { label: "Contact", href: "#contact" },
+          { label: dict.nav.services, href: "#services" },
+          { label: dict.nav.cases, href: "#cases" },
+          { label: dict.nav.about, href: "#about" },
+          { label: dict.nav.contact, href: "#contact" },
         ]}
+        menuFooter={dict.nav.menuFooter}
       />
 
       {/* Hero */}
@@ -44,22 +55,20 @@ export default function Home() {
             <AnimateInHero delay={0.1}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs sm:text-sm font-mono mb-8 sm:mb-10">
                 <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-                Available for remote contracts
+                {dict.hero.badge}
               </div>
             </AnimateInHero>
 
             <AnimateInHero delay={0.22}>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 sm:mb-8 text-center lg:text-left">
-                <span className="block">I build automations that</span>
-                <span className="block gradient-text lg:whitespace-nowrap">scale with your team.</span>
+                <span className="block">{dict.hero.headlineLine1}</span>
+                <span className="block gradient-text">{dict.hero.headlineLine2}</span>
               </h1>
             </AnimateInHero>
 
             <AnimateInHero delay={0.36}>
               <p className="text-base sm:text-xl text-zinc-400 leading-relaxed mb-8 sm:mb-12">
-                I&apos;m Henrique Alencar, AI &amp; Systems Automation Engineer based in São Paulo.
-                I don&apos;t just build workflows. I deliver complete operational systems with
-                interfaces, agents, and real clients using them daily.
+                {dict.hero.subhead}
               </p>
             </AnimateInHero>
 
@@ -70,7 +79,7 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-2 px-7 py-4 sm:px-10 sm:py-5 rounded-lg font-medium text-base sm:text-lg text-white"
                   style={{ background: "linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)" }}
                 >
-                  View Cases
+                  {dict.hero.ctaCases}
                   <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>
@@ -81,32 +90,58 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-7 py-4 sm:px-10 sm:py-5 rounded-lg font-medium text-base sm:text-lg text-zinc-300 border border-zinc-700 hover:border-zinc-500 transition-colors"
                 >
-                  Get in touch
+                  {dict.hero.ctaContact}
                 </a>
               </div>
             </AnimateInHero>
           </div>
 
-          {/* Photo sphere — mobile: above text (handled by order), desktop: right column */}
+          {/* Hero visual — mobile: above text (handled by order), desktop: right column */}
           <AnimateInHero delay={0.3} className="flex items-center justify-center lg:justify-end order-first lg:order-last">
-            <CoinFlipPhoto />
+            <HeroVisual />
           </AnimateInHero>
 
         </div>
       </section>
 
+      {/* Services */}
+      <section id="services" className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-20 sm:py-40">
+        <AnimateIn className="mb-10 sm:mb-16 max-w-2xl">
+          <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.services.eyebrow}</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">{dict.services.heading}</h2>
+          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">{dict.services.subhead}</p>
+        </AnimateIn>
+
+        <AnimateInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {services.map((s) => {
+            const Icon = s.icon;
+            return (
+              <AnimateInCard key={s.id}>
+                <div className="glass-card gradient-border rounded-2xl p-6 sm:p-8 flex flex-col gap-4 sm:gap-5 h-full">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-purple-500/10 text-purple-300">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.75} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white leading-snug">{s.title}</h3>
+                  <p className="text-base text-zinc-400 leading-relaxed">{s.description}</p>
+                </div>
+              </AnimateInCard>
+            );
+          })}
+        </AnimateInStagger>
+      </section>
+
       {/* Cases */}
       <section id="cases" className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-20 sm:py-40">
         <AnimateIn className="mb-10 sm:mb-16">
-          <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">Production Cases</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Systems I&apos;ve built:</h2>
+          <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.cases.eyebrow}</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">{dict.cases.heading}</h2>
         </AnimateIn>
 
         <AnimateInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {cases.map((c) => (
             <AnimateInCard key={c.slug}>
               <Link
-                href={`/cases/${c.slug}`}
+                href={`/${locale}/cases/${c.slug}`}
                 className="glass-card gradient-border rounded-2xl p-6 sm:p-8 flex flex-col gap-5 sm:gap-6 hover:bg-white/[0.06] transition-all duration-300 group h-full"
               >
                 <div className="flex items-start justify-between gap-3">
@@ -150,34 +185,46 @@ export default function Home() {
         </AnimateInStagger>
       </section>
 
+      {/* How we work */}
+      <section id="process" className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-20 sm:py-40">
+        <AnimateIn className="mb-10 sm:mb-16">
+          <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.process.eyebrow}</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">{dict.process.heading}</h2>
+        </AnimateIn>
+
+        <AnimateInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {dict.process.steps.map((step, i) => (
+            <AnimateInCard key={step.title}>
+              <div className="glass-card rounded-2xl p-6 sm:p-7 h-full">
+                <span className="text-sm font-mono text-purple-400">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="text-lg font-semibold text-white mt-3 mb-2">{step.title}</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">{step.description}</p>
+              </div>
+            </AnimateInCard>
+          ))}
+        </AnimateInStagger>
+      </section>
+
       {/* About */}
       <section id="about" className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-20 sm:py-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-start">
           <AnimateIn>
             <div>
-              <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">About</p>
+              <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.about.eyebrow}</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
-                Production-focused.<br />Automation Background.
+                {dict.about.heading}
               </h2>
               <div className="space-y-5 text-base sm:text-lg text-zinc-400 leading-relaxed">
-                <p>
-                  I started in automation in 2021, building email marketing flows at digital agencies.
-                  When LLMs made AI agents viable in 2023, I made the natural transition,
-                  same logic of connecting systems, but with intelligence in the middle.
-                </p>
-                <p>
-                  My differentiator is delivering automation{" "}
-                  <em className="text-zinc-300 not-italic font-medium">plus a client-facing interface</em>
-                  , dashboards, controls, and real-time views, so clients can see and
-                  operate what was built without touching the backend.
-                </p>
+                {dict.about.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
             </div>
           </AnimateIn>
 
           <AnimateIn delay={0.15} direction="right">
             <div>
-              <p className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-4 sm:mb-5">Full Stack</p>
+              <p className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-4 sm:mb-5">{dict.about.stackLabel}</p>
               <div className="flex flex-wrap gap-2 sm:gap-2.5">
                 {stack.map((tech) => (
                   <span
@@ -197,14 +244,13 @@ export default function Home() {
       <section id="contact" className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-20 sm:py-40">
         <AnimateIn>
           <div className="glass-card rounded-2xl p-8 sm:p-16 lg:p-24 text-center glow-purple">
-            <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-4 sm:mb-6">Contact</p>
+            <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-4 sm:mb-6">{dict.contact.eyebrow}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-              Let&apos;s build something that{" "}
-              <span className="gradient-text">actually works.</span>
+              {dict.contact.heading}{" "}
+              <span className="gradient-text">{dict.contact.headingHighlight}</span>
             </h2>
             <p className="text-base sm:text-lg text-zinc-400 max-w-xl mx-auto mb-8 sm:mb-10">
-              Open to international remote contracts and freelance engagements.
-              Based in São Paulo, available across all timezones.
+              {dict.contact.subhead}
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
               <a
@@ -224,8 +270,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative z-10 border-t border-zinc-800/50 px-4 sm:px-8 py-10 sm:py-12">
         <div className="max-w-screen-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
-          <span className="font-mono text-sm sm:text-base text-zinc-400">Henrique Alencar, São Paulo, Brazil</span>
-          <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-zinc-400 font-bold tracking-wide">AI &amp; Systems Automation Engineer</span>
+          <span className="font-mono text-sm sm:text-base text-zinc-400">Right<span className="text-white font-semibold">Flows</span></span>
+          <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-zinc-400 font-bold tracking-wide">{dict.footer.tagline}</span>
         </div>
       </footer>
     </main>
