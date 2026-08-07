@@ -99,8 +99,8 @@ export const en: Dictionary = {
     eyebrow: "About RightFlows",
     heading: "Production-focused. Automation-native.",
     paragraphs: [
-      "Right Flows was born from marketing managers and computer engineers who've been building automation since 2021, starting with email marketing flows at digital agencies. When LLMs made AI agents viable, we made the natural transition: the same logic of connecting systems, but with intelligence in the middle. Today we also work with large-scale infrastructure, when a client's operation calls for it.",
-      "Our differentiator is delivering automation backed by client-facing interfaces: dashboards, controls, and real-time data views, so your team can see and operate what we built without needing to understand code.",
+      "RightFlows was founded in 2024 to solve the most common bottleneck in sales: prospecting and support that don't scale with the company. We build AI agents that act as SDRs and BDRs, qualifying and taking the lead all the way to your team's calendar, plus conversational agents that handle both sales and support, keeping the conversation standard your customers expect.",
+      "Our differentiator is delivering this automation backed by client-facing interfaces: dashboards, controls, and real-time data views, so your team can see and operate what we built without needing to understand code.",
     ],
     stackLabel: "Our Stack",
   },
