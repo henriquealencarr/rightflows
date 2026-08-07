@@ -44,7 +44,7 @@ export const services: Service[] = [
       en: {
         title: "AI Agents in Chatbots",
         description:
-          "Speed-to-lead or SDR agents that welcome the lead, book appointments, take orders, and re-engage with follow-ups on WhatsApp, Telegram, or any communication channel. Your team monitors, the AI executes, 24/7, no days off.",
+          "Speed-to-lead or SDR agents that welcome the lead, qualify, share business information, book appointments, log customer data, and re-engage with follow-ups on WhatsApp, Telegram, or any communication channel. Your team monitors, the AI executes, 24/7, no days off.",
       },
       pt: {
         title: "Agentes de IA em Chatbots",
@@ -60,7 +60,7 @@ export const services: Service[] = [
       en: {
         title: "CRM Automation",
         description:
-          "AI agents that fill in the dashboard fields, move tasks across the kanban with no one lifting a finger, generate weekly reports, and sync every interaction in real time. Your pipeline always up to date, without your team touching a single row.",
+          "Your dashboard 100% automated without you having to press a single button. AI agents that fill in the dashboard fields, move tasks across the kanban with no one lifting a finger, generate weekly reports, and sync every interaction in real time. Your pipeline always up to date, without your team touching a single row.",
       },
       pt: {
         title: "Automação de CRM",
@@ -76,7 +76,7 @@ export const services: Service[] = [
       en: {
         title: "Qualification Systems",
         description:
-          "AI-driven qualification flows that assess a lead's FIT: company size, industry, the person's role, whether they use the right tools, whether they likely have budget. An objective analysis of how well this lead matches your ICP, the ideal customer profile, that plugs into any sales flow you already have.",
+          "AI-driven qualification flows that assess a lead's FIT: company size, industry, the person's role, whether they use the right tools, whether they likely have budget. An objective analysis of how well this lead matches your ICP, the ideal customer profile, that plugs into any sales flow you already have. Ideal for outbound.",
       },
       pt: {
         title: "Sistemas de Qualificação",
@@ -90,9 +90,9 @@ export const services: Service[] = [
     icon: FileSearch,
     translations: {
       en: {
-        title: "Knowledge & Document Assistants",
+        title: "Team & Data Assistants (RAG)",
         description:
-          "Assistants that read your internal documents, contracts, manuals, tutorials, and regulations, and answer any question on the spot, with the right context. Ideal for departments dealing with a lot of scattered information that need fast answers, not manual search.",
+          "Assistants that read your internal documents and external information using RAG (Retrieval-Augmented Generation) technology and answer any question on the spot, with the right context. Ideal for departments dealing with a lot of scattered information that need fast answers, not manual search.",
       },
       pt: {
         title: "Assistentes de Equipes e Dados (RAG)",

@@ -63,12 +63,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <AnimateInHero delay={0.22}>
               <h1 className="text-[1.88rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 sm:mb-8 text-center lg:text-left">
                 <span className="block">
-                  {dict.hero.headlineLine1}{locale === "pt" ? "" : " "}
-                  <span className="lg:hidden">{locale === "pt" ? "" : "at"}</span>
+                  {dict.hero.headlineLine1}
                 </span>
                 <span className="block lg:whitespace-nowrap">
-                  <span className="hidden lg:inline text-white">{locale === "pt" ? "" : "at "}</span>
-                  <span className={`${locale === "pt" ? "gradient-text-gold" : "gradient-text"} italic pr-2`}>{dict.hero.headlineLine2}</span>
+                  <span className="gradient-text-gold italic pr-2">{dict.hero.headlineLine2}</span>
                 </span>
               </h1>
             </AnimateInHero>
@@ -82,7 +80,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                     Sua equipe recebe o lead pronto pra fechar.
                   </>
                 ) : (
-                  dict.hero.subhead
+                  <>
+                    Prospecting, qualification, and support, all with AI.
+                    <br className="hidden lg:block" />{" "}
+                    Your team gets the lead ready to close.
+                  </>
                 )}
               </p>
             </AnimateInHero>

@@ -26,10 +26,10 @@ export const en: Dictionary = {
   },
   hero: {
     badge: "Now onboarding new clients",
-    headlineLine1: "Your team running",
-    headlineLine2: "maximum efficiency.",
+    headlineLine1: "Your sales team,",
+    headlineLine2: "powered by AI.",
     subhead:
-      "What used to take a full day, your team now delivers with AI before the coffee gets cold.",
+      "Prospecting, qualification, and support, all with AI. Your team gets the lead ready to close.",
     ctaCases: "View Cases",
     ctaContact: "I want a free diagnosis",
   },
