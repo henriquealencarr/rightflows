@@ -4,6 +4,47 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@keyframes rf-rise3a { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+.rf-bar {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: rf-rise3a 1.1s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes rf-flow4a {
+  0%   { transform: scaleY(0.15); opacity: .5; }
+  50%  { transform: scaleY(1);    opacity: 1;  }
+  100% { transform: scaleY(0.15); opacity: .5; }
+}
+.rf-bar4a {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: rf-flow4a 2.2s ease-in-out infinite;
+}
+
+@keyframes rf-forkA {
+  0% { stroke-dashoffset: 0; }
+  48% { stroke-dashoffset: -410; }
+  48.5% { stroke-dashoffset: -3000; }
+  100% { stroke-dashoffset: -3000; }
+}
+@keyframes rf-forkB {
+  0% { stroke-dashoffset: -3000; }
+  50% { stroke-dashoffset: -3000; }
+  50.5% { stroke-dashoffset: 0; }
+  98% { stroke-dashoffset: -410; }
+  100% { stroke-dashoffset: -410; }
+}
+
+.rf-fork-a {
+  animation: rf-forkA 6s linear infinite;
+  filter: url(#rf-glow-snake);
+}
+.rf-fork-b {
+  animation: rf-forkB 6s linear infinite;
+  filter: url(#rf-glow-snake);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -71,14 +112,29 @@
     font-family: var(--font-geist-sans), system-ui, sans-serif;
     min-height: 100vh;
   }
+
+  h1 {
+    font-family: var(--font-syne), sans-serif;
+  }
 }
 
 /* Gradient text utility */
 .gradient-text {
+  display: inline-block;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding-right: 0.2em;
+}
+
+.gradient-text-gold {
+  display: inline-block;
+  background: linear-gradient(135deg, #d4af37 0%, #ff9a3c 50%, #ffd93c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-right: 0.2em;
 }
 
 /* Glass card */
@@ -126,3 +182,43 @@
   animation: coin-flip 5s ease-in-out infinite;
   transform-style: preserve-3d;
 }
+
+/* Logo carousel */
+@keyframes logo-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.logo-carousel-track {
+  animation: logo-scroll 30s linear infinite;
+}
+
+.logo-carousel:hover .logo-carousel-track {
+  animation-play-state: paused;
+}
+
+/* Animated service icons */
+@keyframes mc-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes mc-pop { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: scale(1); } }
+
+@keyframes fs-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes fs-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fs-pop { from { opacity: 0; transform: scale(.5); } to { opacity: 1; transform: scale(1); } }
+
+@keyframes ph-pop { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: scale(1); } }
+@keyframes ph-ring {
+  0% { transform: rotate(0); }
+  15% { transform: rotate(-10deg); }
+  30% { transform: rotate(10deg); }
+  45% { transform: rotate(-7deg); }
+  60% { transform: rotate(7deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0); }
+}
+
+@keyframes tg-in { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
+
+@keyframes lc-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+
+@keyframes rc-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes rc-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }

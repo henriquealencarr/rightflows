@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0}
+  @keyframes ph-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+  @keyframes ph-ring{0%{transform:rotate(0)}15%{transform:rotate(-10deg)}30%{transform:rotate(10deg)}45%{transform:rotate(-7deg)}60%{transform:rotate(7deg)}75%{transform:rotate(-3deg)}100%{transform:rotate(0)}}
+</style>
+</helmet>
+<div style="width:100%;height:100%;min-height:280px;display:flex;align-items:center;justify-content:center;background:oklch(0.99 0 0);font-family:-apple-system,Helvetica,Arial,sans-serif">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+    <div style="width:120px;height:120px;border-radius:20px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center">
+      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="transform-origin:12px 12px;animation:ph-ring 0.9s ease-in-out 0.5s both">
+        <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" pathLength="1" style="stroke-dasharray:1 1;animation:ph-draw 0.5s ease-out 0s both"></path>
+      </svg>
+    </div>
+    <div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:oklch(0.55 0 0);letter-spacing:0.02em">phone</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

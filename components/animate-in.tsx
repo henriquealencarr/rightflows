@@ -28,11 +28,25 @@ export function AnimateIn({ children, className, delay = 0, direction = "up" }: 
       className={className}
       initial={initial}
       whileInView={animate}
-      viewport={{ once: false, margin: "-60px" }}
+      viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </motion.div>
+  );
+}
+
+export function AnimateInH2({ children, className, delay = 0.1 }: AnimateInProps) {
+  return (
+    <motion.h2
+      className={className}
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: false, margin: "-60px" }}
+      transition={{ duration: 0.6, delay }}
+    >
+      {children}
+    </motion.h2>
   );
 }
 
@@ -42,7 +56,7 @@ export function AnimateInStagger({ children, className }: { children: ReactNode;
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, margin: "-60px" }}
+      viewport={{ once: false, amount: 0.2 }}
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
@@ -59,7 +73,7 @@ export function AnimateInHero({ children, className, delay = 0 }: AnimateInProps
       className={className}
       initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: false, margin: "-40px" }}
+      viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
