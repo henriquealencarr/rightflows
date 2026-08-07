@@ -99,8 +99,8 @@ export const pt: Dictionary = {
     eyebrow: "Sobre a RightFlows",
     heading: "Foco em produção. Nativos em automação.",
     paragraphs: [
-      "A RightFlows nasceu de engenheiros da computação e gerentes de marketing que constroem automação desde 2021, começando com fluxos de email marketing em agências digitais. Quando os LLMs viabilizaram agentes de IA, fizemos a transição natural: a mesma lógica de conectar sistemas, mas com inteligência no meio. Hoje atuamos também com infraestrutura de grande porte, quando a operação do cliente exige.",
-      "Nosso diferencial é entregar automação apoiada em interfaces voltadas ao cliente: dashboards, controles e visão de dados em tempo real, para que seu time veja e opere o que construímos sem precisar entender de código.",
+      "A RightFlows nasceu em 2024 pra resolver o gargalo mais comum do comercial: prospecção e atendimento que não escalam junto com a empresa. Construímos agentes de IA que atuam como SDR e BDR, qualificando e levando o lead até a agenda do seu time, além de agentes conversacionais que atendem tanto vendas quanto suporte, mantendo o padrão de conversa que o cliente espera.",
+      "Nosso diferencial é entregar essa automação apoiada em interfaces voltadas ao cliente: dashboards, controles e visão de dados em tempo real, para que seu time veja e opere o que construímos sem precisar entender de código.",
     ],
     stackLabel: "Nossa Stack",
   },

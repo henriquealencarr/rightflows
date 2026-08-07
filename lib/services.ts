@@ -90,12 +90,12 @@ export const services: Service[] = [
     icon: FileSearch,
     translations: {
       en: {
-        title: "Team & Data Assistants (RAG)",
+        title: "Support Assistants",
         description:
           "Assistants that read your internal documents and external information using RAG (Retrieval-Augmented Generation) technology and answer any question on the spot, with the right context. Ideal for departments dealing with a lot of scattered information that need fast answers, not manual search.",
       },
       pt: {
-        title: "Assistentes de Equipes e Dados (RAG)",
+        title: "Assistentes de Suporte",
         description:
           "Assistentes que leem seus documentos internos e informações externas usando tecnologia de RAG (Retrieval-Augmented Generation) e respondem qualquer pergunta na hora, com o contexto certo. Ideal pra departamentos que lidam com muita informação espalhada e precisam de resposta rápida, não de busca manual.",
       },
