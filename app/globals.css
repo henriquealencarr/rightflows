@@ -37,11 +37,11 @@
 }
 
 .rf-fork-a {
-  animation: rf-forkA 6s linear infinite;
+  animation: rf-forkA 6s linear 1.1s infinite;
   filter: url(#rf-glow-snake);
 }
 .rf-fork-b {
-  animation: rf-forkB 6s linear infinite;
+  animation: rf-forkB 6s linear 1.1s infinite;
   filter: url(#rf-glow-snake);
 }
 

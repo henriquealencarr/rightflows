@@ -61,7 +61,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           {/* Text */}
           <div className="text-center lg:text-left">
             <AnimateInHero delay={0.22}>
-              <h1 className="text-[1.88rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 sm:mb-8 text-center lg:text-left">
+              <h1 className="text-[1.974rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 sm:mb-8 text-center lg:text-left">
                 <span className="block">
                   {dict.hero.headlineLine1}
                 </span>
@@ -155,7 +155,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                     <Icon className="w-[22px] h-[22px]" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-[1.05rem] sm:text-[1.18rem] font-semibold text-white">{card.title}</h3>
-                  <p className="text-[1.05rem] text-zinc-400 leading-relaxed">{card.description}</p>
+                  <p className="text-[1.05rem] text-white leading-relaxed">{card.description}</p>
                 </div>
               </AnimateInCard>
             );
@@ -192,7 +192,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               {dict.about.heading}
             </AnimateInH2>
             <AnimateIn delay={0.2}>
-              <div className="space-y-5 text-[1.05rem] sm:text-[1.18rem] text-zinc-400 leading-relaxed">
+              <div className="space-y-5 text-[1.05rem] sm:text-[1.18rem] text-white leading-relaxed">
                 {dict.about.paragraphs.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
@@ -215,7 +215,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               {dict.contact.heading}{" "}
               <span className="gradient-text">{dict.contact.headingHighlight}</span>
             </AnimateInH2>
-            <p className="text-[1.05rem] sm:text-[1.18rem] text-zinc-400 max-w-xl lg:max-w-none mx-auto mb-12 sm:mb-4 lg:mb-0 lg:whitespace-nowrap">
+            <p className="text-[1.05rem] sm:text-[1.18rem] text-white max-w-xl lg:max-w-none mx-auto mb-12 sm:mb-4 lg:mb-0 lg:whitespace-nowrap">
               {dict.contact.subhead}
             </p>
             <CalendlyInline />
@@ -226,8 +226,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       {/* Footer */}
       <footer className="relative z-10 border-t border-zinc-800/50 px-4 sm:px-8 pt-16 pb-10 sm:pt-12 sm:pb-12">
         <div className="max-w-screen-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
-          <span className="font-mono text-sm sm:text-base text-zinc-400 mt-6 sm:mt-0">Right<span className="text-white font-semibold">Flows</span></span>
-          <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-zinc-400 font-bold tracking-wide">{dict.footer.tagline}</span>
+          <span className="font-mono text-sm sm:text-base text-white mt-6 sm:mt-0">Right<span className="text-white font-semibold">Flows</span></span>
+          <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-white font-bold tracking-wide">{dict.footer.tagline}</span>
         </div>
       </footer>
     </main>

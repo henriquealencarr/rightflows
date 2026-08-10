@@ -71,7 +71,7 @@ export default async function CasePage({
         {/* Header */}
         <div className="mb-10 sm:mb-16 max-w-4xl">
           <div className="flex items-center gap-3 mb-4 sm:mb-6">
-            <Badge variant="outline" className="text-xs font-mono border-zinc-700 text-zinc-400">
+            <Badge variant="outline" className="text-xs font-mono border-zinc-700 text-white">
               {c.category}
             </Badge>
             {c.client && (
@@ -144,7 +144,7 @@ export default async function CasePage({
               <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">
                 {dict.case.ctaTitle}
               </p>
-              <p className="text-sm text-zinc-400 mb-4 sm:mb-5">
+              <p className="text-sm text-white mb-4 sm:mb-5">
                 {dict.case.ctaSubtitle}
               </p>
               <span
@@ -167,7 +167,7 @@ export default async function CasePage({
             <div>
               <p className="text-xs sm:text-sm font-mono text-purple-400 uppercase tracking-widest mb-1 sm:mb-2">{next.category}</p>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">{next.title}</h3>
-              <p className="text-sm sm:text-base text-zinc-400">{next.tagline}</p>
+              <p className="text-sm sm:text-base text-white">{next.tagline}</p>
             </div>
             <svg
               className="w-6 h-6 sm:w-8 sm:h-8 text-zinc-600 group-hover:text-zinc-300 transition-colors shrink-0"
@@ -182,8 +182,8 @@ export default async function CasePage({
       {/* Footer */}
       <footer className="relative z-10 border-t border-zinc-800/50 px-4 sm:px-8 pt-16 pb-10 sm:pt-12 sm:pb-12 mt-10 sm:mt-20">
         <div className="max-w-screen-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
-          <span className="font-mono text-sm sm:text-base text-zinc-400 mt-6 sm:mt-0">Right<span className="text-white font-semibold">Flows</span></span>
-          <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-zinc-400 font-bold tracking-wide">{dict.footer.tagline}</span>
+          <span className="font-mono text-sm sm:text-base text-white mt-6 sm:mt-0">Right<span className="text-white font-semibold">Flows</span></span>
+          <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-white font-bold tracking-wide">{dict.footer.tagline}</span>
         </div>
       </footer>
     </main>

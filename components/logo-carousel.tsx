@@ -21,7 +21,7 @@ export function LogoCarousel() {
         {track.map((logo, i) => (
           <div
             key={`${logo.alt}-${i}`}
-            className="flex items-center justify-center shrink-0 h-16 w-48 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+            className="flex items-center justify-center shrink-0 h-16 w-48 grayscale brightness-[3] opacity-90 hover:opacity-100 hover:grayscale-0 hover:brightness-100 transition-all duration-300"
             style={logo.scale ? { marginLeft: 50, marginRight: 50 } : undefined}
           >
             <Image

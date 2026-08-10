@@ -60,7 +60,7 @@ export function ProcessAccordion({ steps, heading, eyebrow }: ProcessAccordionPr
                 <span className="text-purple-400 font-mono text-2xl font-bold shrink-0 leading-none w-8">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className={`font-semibold text-[1.05rem] leading-snug flex-1 ${isActive ? "text-white" : "text-zinc-400"}`}>
+                <span className={`font-semibold text-[1.05rem] leading-snug flex-1 ${isActive ? "text-white" : "text-white"}`}>
                   {step.title}
                 </span>
                 <StepIcon className={`w-5 h-5 shrink-0 transition-colors ${isActive ? "text-purple-400" : "text-zinc-600"}`} strokeWidth={1.5} />
@@ -75,7 +75,7 @@ export function ProcessAccordion({ steps, heading, eyebrow }: ProcessAccordionPr
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     style={{ overflow: "hidden" }}
                   >
-                    <p className="text-[1.05rem] text-zinc-400 leading-relaxed px-5 pt-2 pb-14">{step.description}</p>
+                    <p className="text-[1.05rem] text-white leading-relaxed px-5 pt-2 pb-14">{step.description}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -127,7 +127,7 @@ export function ProcessAccordion({ steps, heading, eyebrow }: ProcessAccordionPr
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="px-8 pb-8 flex-1 flex flex-col justify-between"
               >
-                <p className="text-[1.05rem] text-zinc-400 leading-relaxed max-w-sm">{step.description}</p>
+                <p className="text-[1.05rem] text-white leading-relaxed max-w-sm">{step.description}</p>
               </motion.div>
             )}
             {active === i && (

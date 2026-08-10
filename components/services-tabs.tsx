@@ -102,13 +102,13 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                         className="px-6 pb-10 pt-6 flex flex-col gap-4"
                         style={{ background: "rgba(255,255,255,0.03)" }}
                       >
-                        <div className="flex items-start gap-4">
-                          <div className="shrink-0 w-14 h-14 rounded-xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
-                            <IconReveal icon={ItemIcon} className="w-7 h-7 text-purple-400" strokeWidth={1} />
+                        <div className="flex flex-col items-center gap-4 text-center">
+                          <div className="shrink-0 w-24 h-24 rounded-xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
+                            <IconReveal icon={ItemIcon} className="w-12 h-12 text-purple-400" strokeWidth={1} />
                           </div>
                           <div>
-                            <h3 className="text-[1.05rem] font-semibold text-white mb-2">{s.title}</h3>
-                            <p className="text-[1.05rem] text-zinc-400 leading-relaxed">{s.description}</p>
+                            <h3 className="text-[1.155rem] font-semibold text-white mb-3">{s.title}</h3>
+                            <p className="text-[1.05rem] text-white leading-relaxed">{s.description}</p>
                           </div>
                         </div>
                       </div>
@@ -155,7 +155,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
           >
             <div className="flex-1 min-w-0">
               <h3 className="text-[1.575rem] font-semibold text-white mb-4">{current.title}</h3>
-              <p className="text-[1.05rem] text-zinc-400 leading-relaxed">{current.description}</p>
+              <p className="text-[1.05rem] text-white leading-relaxed">{current.description}</p>
             </div>
             <div className="shrink-0 w-48 h-48 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
               <IconReveal icon={Icon} className="w-20 h-20 text-purple-400" strokeWidth={1} />

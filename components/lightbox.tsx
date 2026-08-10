@@ -143,7 +143,7 @@ export function Lightbox({ images, alt }: LightboxProps) {
             )}
 
             {/* Counter */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 font-mono text-xs text-zinc-400 bg-zinc-800/80 px-3 py-1.5 rounded-full">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 font-mono text-xs text-white bg-zinc-800/80 px-3 py-1.5 rounded-full">
               {activeIndex + 1} / {images.length}
             </div>
           </motion.div>
