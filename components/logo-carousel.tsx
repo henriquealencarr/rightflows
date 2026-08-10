@@ -4,11 +4,11 @@ const LOGOS = [
   { src: "/companies/2W.png", alt: "2W" },
   { src: "/companies/LAC.png", alt: "Legacy Automotive", scale: 1.4 },
   { src: "/companies/clipper.png", alt: "Clipper", scale: 1.4 },
-  { src: "/companies/cryllex.png", alt: "Cryllex" },
+  { src: "/companies/cryllex.png", alt: "Cryllex", scale: 1.4 },
   { src: "/companies/custom_wondow.png", alt: "Custom Window" },
-  { src: "/companies/logo-cerejeiras.webp", alt: "Cerejeiras" },
-  { src: "/companies/onze.png", alt: "Onze" },
-  { src: "/companies/taent_scout.png", alt: "Talent Scout" },
+  { src: "/companies/logo-cerejeiras.webp", alt: "Cerejeiras", scale: 1.3 },
+  { src: "/companies/onze.png", alt: "Onze", scale: 1.6 },
+  { src: "/companies/taent_scout.png", alt: "Talent Scout", scale: 1.6 },
   { src: "/companies/vat_consult.png", alt: "VAT Consult" },
 ];
 
