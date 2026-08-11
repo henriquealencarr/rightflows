@@ -97,7 +97,7 @@ export const en: Dictionary = {
   },
   about: {
     eyebrow: "About RightFlows",
-    heading: "Production-focused. Automation-native.",
+    heading: "Focused on tangible results.",
     paragraphs: [
       "RightFlows was founded in 2024 to solve the most common bottleneck in sales: prospecting and support that don't scale with the company. We build AI agents that act as SDRs and BDRs, qualifying and taking the lead all the way to your team's calendar, plus conversational agents that handle both sales and support, keeping the conversation standard your customers expect.",
       "Our differentiator is delivering this automation backed by client-facing interfaces: dashboards, controls, and real-time data views, so your team can see and operate what we built without needing to understand code.",
