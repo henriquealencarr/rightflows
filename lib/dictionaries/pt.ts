@@ -2,7 +2,7 @@ import type { Dictionary } from "./types";
 
 export const pt: Dictionary = {
   meta: {
-    title: "RightFlows - Automação de IA para Todo Tipo de Empresa",
+    title: "RightFlows - Seu comercial, potencializado por IA.",
     description:
       "A RightFlows projeta e entrega sistemas completos de automação com IA para empresas de todos os portes. Não são só fluxos — são sistemas operacionais completos, rodando em produção.",
     keywords: [
