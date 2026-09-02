@@ -29,7 +29,7 @@ export const pt: Dictionary = {
     headlineLine1: "Seu comercial,",
     headlineLine2: "impulsionado por IA.",
     subhead:
-      "Prospecção, qualificação e atendimento, tudo com IA. Sua equipe recebe o lead pronto pra fechar.",
+      "Prospecção, qualificação e atendimento, tudo automatizado. Sua equipe recebe o lead pronto pra fechar no seu CRM.",
     ctaCases: "Ver Cases",
     ctaContact: "Quero um diagnóstico gratuito",
   },

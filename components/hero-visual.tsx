@@ -18,9 +18,22 @@ const DOT_WINDOWS: Record<string, [number, number][]> = {
   "370-220": [[93.48, 99.04]],
 };
 
+function forkAOffset(t: number) {
+  if (t < 48) return (t / 48) * -410;
+  return -3000;
+}
+
+function forkBOffset(t: number) {
+  if (t < 50.5) return -3000;
+  if (t < 98) return ((t - 50.5) / 47.5) * -410;
+  return -410;
+}
+
 export function HeroVisual() {
   const dotRefs = useRef<Record<string, SVGCircleElement | SVGRectElement | null>>({});
   const ringRefs = useRef<Record<string, SVGCircleElement | SVGRectElement | null>>({});
+  const forkARef = useRef<SVGPathElement | null>(null);
+  const forkBRef = useRef<SVGPathElement | null>(null);
 
   useEffect(() => {
     let raf: number;
@@ -42,6 +55,9 @@ export function HeroVisual() {
           const ring = ringRefs.current[key];
           if (ring) ring.style.transform = scale;
         }
+
+        if (forkARef.current) forkARef.current.style.strokeDashoffset = String(forkAOffset(t));
+        if (forkBRef.current) forkBRef.current.style.strokeDashoffset = String(forkBOffset(t));
       }
       raf = requestAnimationFrame(tick);
     };
@@ -92,22 +108,26 @@ export function HeroVisual() {
         </g>
 
         <path
+          ref={forkARef}
           d="M 30 150 L 200 150 L 200 80 L 370 80"
           fill="none"
           stroke="#e0116f"
           strokeWidth="6"
           strokeLinecap="round"
           strokeDasharray="30 3000"
+          strokeDashoffset="0"
           mask="url(#rf-line-mask)"
           className="rf-fork-a"
         />
         <path
+          ref={forkBRef}
           d="M 30 150 L 200 150 L 200 220 L 370 220"
           fill="none"
           stroke="#e0116f"
           strokeWidth="6"
           strokeLinecap="round"
           strokeDasharray="30 3000"
+          strokeDashoffset="-3000"
           mask="url(#rf-line-mask)"
           className="rf-fork-b"
         />

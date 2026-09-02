@@ -22,26 +22,8 @@
   animation: rf-flow4a 2.2s ease-in-out infinite;
 }
 
-@keyframes rf-forkA {
-  0% { stroke-dashoffset: 0; }
-  48% { stroke-dashoffset: -410; }
-  48.5% { stroke-dashoffset: -3000; }
-  100% { stroke-dashoffset: -3000; }
-}
-@keyframes rf-forkB {
-  0% { stroke-dashoffset: -3000; }
-  50% { stroke-dashoffset: -3000; }
-  50.5% { stroke-dashoffset: 0; }
-  98% { stroke-dashoffset: -410; }
-  100% { stroke-dashoffset: -410; }
-}
-
-.rf-fork-a {
-  animation: rf-forkA 6s linear 1.1s infinite;
-  filter: url(#rf-glow-snake);
-}
+.rf-fork-a,
 .rf-fork-b {
-  animation: rf-forkB 6s linear 1.1s infinite;
   filter: url(#rf-glow-snake);
 }
 
