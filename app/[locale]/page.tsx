@@ -81,9 +81,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   </>
                 ) : (
                   <>
-                    Prospecting, qualification, and support, all with AI.
+                    Prospecting, qualification, and support, all automated.
                     <br className="hidden lg:block" />{" "}
-                    Your team gets the lead ready to close.
+                    Your team gets the lead ready to close in your CRM.
                   </>
                 )}
               </p>
