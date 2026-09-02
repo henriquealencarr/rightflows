@@ -2,7 +2,7 @@ import type { Dictionary } from "./types";
 
 export const en: Dictionary = {
   meta: {
-    title: "RightFlows - AI Automation for Every Business",
+    title: "RightFlows - Your sales team, powered by AI.",
     description:
       "RightFlows designs and deploys end-to-end AI automation systems for businesses of every size. Not just workflows — complete operational systems running in production.",
     keywords: [
@@ -29,7 +29,7 @@ export const en: Dictionary = {
     headlineLine1: "Your sales team,",
     headlineLine2: "powered by AI.",
     subhead:
-      "Prospecting, qualification, and support, all with AI. Your team gets the lead ready to close.",
+      "Prospecting, qualification, and support, all automated. Your team gets the lead ready to close, right in your CRM.",
     ctaCases: "View Cases",
     ctaContact: "I want a free diagnosis",
   },
