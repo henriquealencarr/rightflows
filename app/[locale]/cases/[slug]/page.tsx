@@ -21,10 +21,18 @@ export async function generateMetadata({
   const c = getCaseBySlug(slug, rawLocale);
   if (!c) return {};
   const dict = getDictionary(rawLocale);
+  const title = `${c.title} ${dict.case.titleSuffix}`;
   return {
-    title: `${c.title} ${dict.case.titleSuffix}`,
+    title,
     description: c.description,
+    openGraph: {
+      title,
+      description: c.description,
+      url: `/${rawLocale}/cases/${slug}`,
+      type: "article",
+    },
     alternates: {
+      canonical: `/${rawLocale}/cases/${slug}`,
       languages: Object.fromEntries(locales.map((l) => [l, `/${l}/cases/${slug}`])),
     },
   };

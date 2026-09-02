@@ -35,15 +35,18 @@ export async function generateMetadata({
   const dict = getDictionary(locale);
 
   return {
+    metadataBase: new URL("https://rightflows.com.br"),
     title: dict.meta.title,
     description: dict.meta.description,
     keywords: [...dict.meta.keywords],
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
+      url: `/${locale}`,
       type: "website",
     },
     alternates: {
+      canonical: `/${locale}`,
       languages: {
         en: "/en",
         pt: "/pt",
