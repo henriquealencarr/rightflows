@@ -72,6 +72,23 @@ export function AnimatedListChecks({ strokeWidth = 1.75, style, ...props }: Anim
   );
 }
 
+export function AnimatedMessagesSquare({ strokeWidth = 1.75, style, ...props }: AnimatedIconProps) {
+  return (
+    <svg {...base} strokeWidth={strokeWidth} style={style} {...props}>
+      <path
+        d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"
+        pathLength="1"
+        style={{ strokeDasharray: "1 1", animation: "mc-draw 0.5s ease-out 0.05s both" }}
+      />
+      <path
+        d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"
+        pathLength="1"
+        style={{ strokeDasharray: "1 1", animation: "mc-draw 0.5s ease-out 0.35s both" }}
+      />
+    </svg>
+  );
+}
+
 export function AnimatedRefreshCw({ strokeWidth = 1.75, style, ...props }: AnimatedIconProps) {
   return (
     <svg {...base} strokeWidth={strokeWidth} style={{ transformOrigin: "center", transformBox: "fill-box", animation: "rc-spin 1.3s ease-out 0s 1 both", ...style }} {...props}>

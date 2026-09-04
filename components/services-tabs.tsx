@@ -9,6 +9,7 @@ import {
   AnimatedTarget,
   AnimatedListChecks,
   AnimatedRefreshCw,
+  AnimatedMessagesSquare,
   type AnimatedIconProps,
 } from "@/components/animated-service-icons";
 
@@ -47,6 +48,7 @@ const iconMap: Record<string, (props: AnimatedIconProps) => React.JSX.Element> =
   "lead-generation": AnimatedTarget,
   "qualification-systems": AnimatedListChecks,
   "sdr-crm": AnimatedRefreshCw,
+  "meeting-assistants": AnimatedMessagesSquare,
 };
 
 interface Service {

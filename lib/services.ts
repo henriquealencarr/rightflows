@@ -6,6 +6,7 @@ import {
   Target,
   ListChecks,
   RefreshCw,
+  MessagesSquare,
   type LucideIcon,
 } from "lucide-react";
 
@@ -28,12 +29,12 @@ export const services: Service[] = [
       en: {
         title: "Lead Generation & Prospecting",
         description:
-          "Automated pipelines that scrape data on potential leads and enrich that data at scale, delivering segmented lists ready for your team to prospect. An AI agent goes further: it takes over prospecting and sends personalized messages to each lead, with no manual outreach from your team.",
+          "Automated pipelines that scrape data on potential leads and enrich that data at scale, delivering segmented lists ready for your team to prospect. An AI agent goes further: creates different personalized messages for each lead, with no need for your team to write anything from scratch.",
       },
       pt: {
         title: "Geração e Prospecção de Leads",
         description:
-          "Pipelines automatizados que raspam dados de potenciais leads e enriquecem esses dados em escala, entregando listas segmentadas prontas pro seu time prospectar. Um agente de IA vai além: assume a prospecção e envia mensagens personalizadas pra cada lead, sem seu time precisar disparar manualmente.",
+          "Pipelines automatizados que raspam dados de potenciais leads e enriquecem esses dados em escala, entregando listas segmentadas prontas pro seu time prospectar. Um agente de IA vai além: Cria diferentes mensagens personalizadas pra cada lead, sem seu time precisar gerar algo do zero.",
       },
     },
   },
@@ -86,18 +87,34 @@ export const services: Service[] = [
     },
   },
   {
+    id: "meeting-assistants",
+    icon: MessagesSquare,
+    translations: {
+      en: {
+        title: "Meeting Assistants",
+        description:
+          "Agents that analyze your sales meetings and automatically evaluate team performance. They log meeting data straight into the CRM, keeping the lead's history up to date. And they generate a ready-to-send proposal based on what was discussed.",
+      },
+      pt: {
+        title: "Assistentes de Reunião",
+        description:
+          "Agentes que analisam suas reuniões de vendas e avaliam o desempenho do time automaticamente. Registram os dados da reunião direto no CRM, mantendo o histórico do lead atualizado. E geram a proposta comercial pronta, com base no que foi discutido.",
+      },
+    },
+  },
+  {
     id: "document-assistants",
     icon: FileSearch,
     translations: {
       en: {
         title: "Support Assistants",
         description:
-          "Assistants that read your internal documents and external information using RAG (Retrieval-Augmented Generation) technology and answer any question on the spot, with the right context. Ideal for departments dealing with a lot of scattered information that need fast answers, not manual search.",
+          "Assistants that read your internal documents and external information using RAG (Retrieval-Augmented Generation) technology and answer any question on the spot, with the right context. Ideal for customer support or internal helpdesk teams.",
       },
       pt: {
         title: "Assistentes de Suporte",
         description:
-          "Assistentes que leem seus documentos internos e informações externas usando tecnologia de RAG (Retrieval-Augmented Generation) e respondem qualquer pergunta na hora, com o contexto certo. Ideal pra departamentos que lidam com muita informação espalhada e precisam de resposta rápida, não de busca manual.",
+          "Assistentes que leem seus documentos internos e informações externas usando tecnologia de RAG (Retrieval-Augmented Generation) e respondem qualquer pergunta na hora, com o contexto certo. Ideal para SAC ou Suporte interno da empresa.",
       },
     },
   },
