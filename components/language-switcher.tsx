@@ -41,7 +41,7 @@ export function LanguageSwitcher({ locale, className }: { locale: Locale; classN
                 : "opacity-50 hover:opacity-80 transition-opacity"
             }
           >
-            <Flag className="w-5 h-auto rounded-sm" />
+            <Flag className="w-7 h-auto" />
           </a>
         );
       })}
