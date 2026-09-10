@@ -15,6 +15,7 @@ import { ProcessAccordion } from "@/components/process-accordion";
 import { Nav } from "@/components/nav";
 import { HeroVisual } from "@/components/hero-visual";
 import { StackGraphic } from "@/components/stack-graphic";
+import { HeroFlowBackground } from "@/components/hero-flow-background";
 
 const stack = [
   "n8n", "Make", "GPT", "Claude", "Gemini",
@@ -41,6 +42,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-purple-500/12 rounded-full blur-[110px]" />
         <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-blue-700/10 rounded-full blur-[120px]" />
       </div>
+
+      {/* Hero-only flow animation, fades out on scroll */}
+      <HeroFlowBackground />
 
       {/* Nav */}
       <Nav
