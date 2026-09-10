@@ -54,7 +54,7 @@ export const pt: Dictionary = {
   },
   services: {
     eyebrow: "O Que Fazemos",
-    heading: "Como a IA aumenta a conversão da sua operação comercial.",
+    heading: "Como a IA ajuda a gerenciar leads na sua operação comercial.",
     subhead:
       "Auditamos processos que tomam tempo da sua equipe e desenhamos automações decisivas para o seu resultado.",
   },
@@ -99,8 +99,8 @@ export const pt: Dictionary = {
     eyebrow: "Sobre a RightFlows",
     heading: "Foco em resultados tangíveis.",
     paragraphs: [
-      "A RightFlows nasceu em 2024 pra resolver o gargalo mais comum do comercial: prospecção e atendimento que não escalam junto com a empresa. Construímos agentes de IA que atuam como SDR e BDR, qualificando e levando o lead até a agenda do seu time, além de agentes conversacionais que atendem tanto vendas quanto suporte, mantendo o padrão de conversa que o cliente espera.",
-      "Nosso diferencial é entregar essa automação apoiada em interfaces voltadas ao cliente: dashboards, controles e visão de dados em tempo real, para que seu time veja e opere o que construímos sem precisar entender de código.",
+      "A RightFlows nasceu em 2024 pra resolver um gargalo clássico do comercial: gerenciamento de leads que não escalam junto com a empresa. Construímos agentes de IA que respondem na hora, qualificam o lead certo e levam ele pronto até a agenda do seu time. Também reativamos base parada, convertendo quem já te conhece em venda de novo. Programamos follow-up inteligente que aborda o lead na hora certa, antes que ele esfrie. E temos agentes conversacionais que atendem vendas e suporte, mantendo o padrão de conversa que o cliente espera.",
+      "É essa combinação, resposta rápida, qualificação certa e eficiência operacional, que aumenta a conversão. Nosso diferencial é te dar controle disso tudo: dashboards, controles e dados em tempo real, pra que seu time acompanhe e ajuste sem precisar entender de código.",
     ],
     stackLabel: "Nossa Stack",
   },

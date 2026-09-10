@@ -54,7 +54,7 @@ export const en: Dictionary = {
   },
   services: {
     eyebrow: "What We Do",
-    heading: "How AI increases conversion in your sales operation.",
+    heading: "How AI helps manage leads in your sales operation.",
     subhead:
       "We audit the processes that drain your team's time and design automations that move the needle on your results.",
   },
@@ -99,8 +99,8 @@ export const en: Dictionary = {
     eyebrow: "About RightFlows",
     heading: "Focused on tangible results.",
     paragraphs: [
-      "RightFlows was founded in 2024 to solve the most common bottleneck in sales: prospecting and support that don't scale with the company. We build AI agents that act as SDRs and BDRs, qualifying and taking the lead all the way to your team's calendar, plus conversational agents that handle both sales and support, keeping the conversation standard your customers expect.",
-      "Our differentiator is delivering this automation backed by client-facing interfaces: dashboards, controls, and real-time data views, so your team can see and operate what we built without needing to understand code.",
+      "RightFlows was founded in 2024 to solve a classic bottleneck in sales: lead management that doesn't scale with the company. We build AI agents that respond instantly, qualify the right lead, and hand it off ready-to-close to your team's calendar. We also reactivate your dormant base, turning people who already know you back into sales. We set up smart follow-ups that reach the lead at the right moment, before it goes cold. And we have conversational agents that handle both sales and support, keeping the conversation standard your customers expect.",
+      "It's this combination, fast response, accurate qualification, and operational efficiency, that drives conversion up. Our differentiator is giving you control over all of it: dashboards, controls, and real-time data, so your team can track and adjust without needing to understand code.",
     ],
     stackLabel: "Our Stack",
   },
