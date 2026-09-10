@@ -29,12 +29,6 @@ export function HeroFlowBackground() {
   return (
     <div ref={wrapRef} className="fixed inset-0 pointer-events-none overflow-hidden">
       {isDesktop && <DiagonalFlowBg className="absolute inset-0 w-full h-full opacity-70" />}
-      <img
-        src="/diagonal-flow-static.png"
-        alt=""
-        aria-hidden="true"
-        className="lg:hidden absolute inset-0 w-full h-full object-cover opacity-35"
-      />
     </div>
   );
 }
