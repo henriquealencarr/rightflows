@@ -54,7 +54,7 @@ export const pt: Dictionary = {
   },
   services: {
     eyebrow: "O Que Fazemos",
-    heading: "Como a IA pode fazer sentido na sua operação comercial",
+    heading: "Como a IA aumenta a conversão da sua operação comercial.",
     subhead:
       "Auditamos processos que tomam tempo da sua equipe e desenhamos automações decisivas para o seu resultado.",
   },

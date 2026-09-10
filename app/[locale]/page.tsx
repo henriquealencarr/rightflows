@@ -118,7 +118,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       {/* Services */}
       <section id="services" className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-4 sm:py-40">
-        <div className="mb-10 sm:mb-16 max-w-2xl text-center lg:text-left">
+        <div className="mb-10 sm:mb-16 max-w-2xl lg:max-w-3xl text-center lg:text-left">
           <AnimateIn delay={0}>
             <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.services.eyebrow}</p>
           </AnimateIn>

@@ -54,7 +54,7 @@ export const en: Dictionary = {
   },
   services: {
     eyebrow: "What We Do",
-    heading: "How AI can make sense for your operation",
+    heading: "How AI increases conversion in your sales operation.",
     subhead:
       "We audit the processes that drain your team's time and design automations that move the needle on your results.",
   },
