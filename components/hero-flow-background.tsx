@@ -16,7 +16,6 @@ export function HeroFlowBackground() {
   }, []);
 
   useEffect(() => {
-    if (!isDesktop) return;
     function onScroll() {
       const fadeEnd = window.innerHeight;
       const ratio = 1 - Math.min(1, window.scrollY / fadeEnd);
@@ -25,13 +24,17 @@ export function HeroFlowBackground() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [isDesktop]);
-
-  if (!isDesktop) return null;
+  }, []);
 
   return (
     <div ref={wrapRef} className="fixed inset-0 pointer-events-none overflow-hidden">
-      <DiagonalFlowBg className="absolute inset-0 w-full h-full opacity-70" />
+      {isDesktop && <DiagonalFlowBg className="absolute inset-0 w-full h-full opacity-70" />}
+      <img
+        src="/diagonal-flow-static.svg"
+        alt=""
+        aria-hidden="true"
+        className="lg:hidden absolute inset-0 w-full h-full object-cover opacity-70"
+      />
     </div>
   );
 }
