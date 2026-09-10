@@ -67,7 +67,7 @@ export function HeroVisual() {
   }, []);
 
   return (
-    <div className="w-full max-w-[440px] lg:max-w-[616px] aspect-[1.55] ml-auto lg:translate-x-12">
+    <div className="w-full max-w-[440px] lg:max-w-[616px] aspect-[1.55] ml-auto lg:translate-x-12 scale-125 lg:scale-100">
       <svg viewBox="0 0 400 300" width="100%" height="100%">
         <defs>
           <filter id="rf-glow" x="-150%" y="-150%" width="400%" height="400%">

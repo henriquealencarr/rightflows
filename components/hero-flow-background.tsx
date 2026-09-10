@@ -1,12 +1,22 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DiagonalFlowBg } from "@/components/diagonal-flow-bg";
 
 export function HeroFlowBackground() {
   const wrapRef = useRef<HTMLDivElement>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    setIsDesktop(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
     function onScroll() {
       const fadeEnd = window.innerHeight;
       const ratio = 1 - Math.min(1, window.scrollY / fadeEnd);
@@ -15,7 +25,9 @@ export function HeroFlowBackground() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isDesktop]);
+
+  if (!isDesktop) return null;
 
   return (
     <div ref={wrapRef} className="fixed inset-0 pointer-events-none overflow-hidden">

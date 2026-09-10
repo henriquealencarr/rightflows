@@ -65,7 +65,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           {/* Text */}
           <div className="text-center lg:text-left">
             <AnimateInHero delay={0.22}>
-              <h1 className="text-[1.974rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 sm:mb-8 text-center lg:text-left">
+              <h1 className="text-[2.073rem] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] mb-6 sm:mb-8 text-center lg:text-left">
                 <span className="block">
                   {dict.hero.headlineLine1}
                 </span>

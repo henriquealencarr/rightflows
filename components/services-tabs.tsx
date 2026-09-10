@@ -66,6 +66,10 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
   const current = services[active] ?? services[0];
   const Icon = iconMap[current?.id] ?? AnimatedMessageCircle;
 
+  function handleAccordionClick(i: number) {
+    setActive(active === i ? -1 : i);
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 120, filter: "blur(4px)" }}
@@ -75,14 +79,14 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
       className="grid grid-cols-1 lg:grid-cols-[418px_1fr] gap-6 lg:gap-2 items-stretch"
     >
         {/* Mobile: accordion */}
-        <div className="flex lg:hidden flex-col gap-2">
+        <motion.div layout className="flex lg:hidden flex-col gap-2">
           {services.map((s, i) => {
             const ItemIcon = iconMap[s.id] ?? AnimatedMessageCircle;
             const isActive = active === i;
             return (
-              <div key={s.id} className="rounded-xl border border-white/10 overflow-hidden">
+              <motion.div layout key={s.id} className="rounded-xl border border-white/10 overflow-hidden">
                 <button
-                  onClick={() => setActive(isActive ? -1 : i)}
+                  onClick={() => handleAccordionClick(i)}
                   className={`w-full text-left px-4 py-4 text-xs font-[family-name:var(--font-syne)] font-bold uppercase tracking-widest transition-colors duration-200 flex items-center justify-between ${
                     isActive ? "text-white bg-white/5" : "text-white/60"
                   }`}
@@ -97,7 +101,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                       style={{ overflow: "hidden" }}
                     >
                       <div
@@ -117,10 +121,10 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Desktop: sidebar + panel */}
         <nav className="hidden lg:flex flex-col border-l border-white/10">
