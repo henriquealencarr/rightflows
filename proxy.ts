@@ -6,9 +6,6 @@ function getLocale(request: NextRequest): string {
   const cookieLocale = request.cookies.get("NEXT_LOCALE")?.value;
   if (cookieLocale && hasLocale(cookieLocale)) return cookieLocale;
 
-  const acceptLanguage = request.headers.get("accept-language") ?? "";
-  if (acceptLanguage.toLowerCase().startsWith("pt")) return "pt";
-
   return defaultLocale;
 }
 
