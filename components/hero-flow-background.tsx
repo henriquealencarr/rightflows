@@ -33,7 +33,7 @@ export function HeroFlowBackground() {
         src="/diagonal-flow-static.svg"
         alt=""
         aria-hidden="true"
-        className="lg:hidden absolute inset-0 w-full h-full object-cover opacity-70"
+        className="lg:hidden absolute inset-0 w-full h-full object-cover opacity-80"
       />
     </div>
   );
