@@ -27,9 +27,9 @@ export const en: Dictionary = {
   hero: {
     badge: "Now onboarding new clients",
     headlineLine1: "Your sales team,",
-    headlineLine2: "Automated by AI.",
+    headlineLine2: "always converting.",
     subhead:
-      "Support, Qualification, and Prospecting, without manual work. Your team gets the lead ready to close in your CRM.",
+      "Support, qualification, and prospecting with AI, without manual work. Your team gets the lead ready to close in your CRM.",
     ctaCases: "View Cases",
     ctaContact: "I want a free diagnosis",
   },
