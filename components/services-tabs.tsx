@@ -84,7 +84,8 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
             const ItemIcon = iconMap[s.id] ?? AnimatedMessageCircle;
             const isActive = active === i;
             return (
-              <motion.div layout key={s.id} className="rounded-xl border border-white/10 overflow-hidden">
+              <motion.div layout key={s.id} className="relative rounded-xl border border-white/10 overflow-hidden">
+                <div className={`absolute bottom-0 left-0 h-0.5 w-full bg-purple-400 transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0"}`} />
                 <button
                   onClick={() => handleAccordionClick(i)}
                   className={`w-full text-left px-4 py-4 text-xs font-[family-name:var(--font-syne)] font-bold uppercase tracking-widest transition-colors duration-200 flex items-center justify-between ${

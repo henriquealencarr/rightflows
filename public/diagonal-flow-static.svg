@@ -2,13 +2,13 @@
   <defs>
     <linearGradient id="l1" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fff" stop-opacity="0" />
-      <stop offset="65%" stop-color="#fff" stop-opacity="0.14" />
-      <stop offset="100%" stop-color="#fff" stop-opacity="0.4" />
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#fff" stop-opacity="1" />
     </linearGradient>
     <linearGradient id="l2" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fff" stop-opacity="0" />
-      <stop offset="65%" stop-color="#fff" stop-opacity="0.1" />
-      <stop offset="100%" stop-color="#fff" stop-opacity="0.28" />
+      <stop offset="65%" stop-color="#fff" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#fff" stop-opacity="0.8" />
     </linearGradient>
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="6" result="b" />
