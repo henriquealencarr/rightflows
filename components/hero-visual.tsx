@@ -6,12 +6,10 @@ import { motion } from "framer-motion";
 function GlassBlurPanel({ className, children }: { className?: string; children?: React.ReactNode }) {
   return (
     <motion.div
-      className={className}
+      className={`hidden lg:block bg-white/[0.03] border border-white/10 ${className ?? ""}`}
       style={{
-        background: "rgba(255,255,255,0.03)",
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",
-        border: "1px solid rgba(255,255,255,0.1)",
       }}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
