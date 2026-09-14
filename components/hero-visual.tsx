@@ -1,6 +1,27 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+
+function GlassBlurPanel({ className, children }: { className?: string; children?: React.ReactNode }) {
+  return (
+    <motion.div
+      className={className}
+      style={{
+        background: "rgba(255,255,255,0.03)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
+        border: "1px solid rgba(255,255,255,0.1)",
+      }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.8, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 const CYCLE_MS = 6000;
 const START_DELAY_MS = 1100;
@@ -67,8 +88,26 @@ export function HeroVisual() {
   }, []);
 
   return (
-    <div className="w-full max-w-[440px] lg:max-w-[616px] aspect-[1.55] ml-auto lg:translate-x-12 scale-125 lg:scale-100">
-      <svg viewBox="0 0 400 300" width="100%" height="100%">
+    <div className="relative w-full max-w-[440px] lg:max-w-[616px] aspect-[1.55] ml-auto lg:translate-x-12">
+      <GlassBlurPanel className="absolute inset-[6%] rounded-3xl overflow-hidden">
+        <div
+          className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 w-9 h-9 sm:w-11 sm:h-11 rounded-xl border border-white/10 flex items-center justify-center"
+          style={{ background: "rgba(20,20,30,0.6)", backdropFilter: "blur(10px)" }}
+        >
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 animate-spin text-purple-400" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.2" strokeWidth="2.5" />
+            <path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+          </svg>
+        </div>
+      </GlassBlurPanel>
+      <motion.div
+        className="absolute inset-0 scale-125 lg:scale-100"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <svg viewBox="0 0 400 300" width="100%" height="100%" className="relative">
         <defs>
           <filter id="rf-glow" x="-150%" y="-150%" width="400%" height="400%">
             <feGaussianBlur stdDeviation="4" result="blur" />
@@ -151,6 +190,7 @@ export function HeroVisual() {
         <circle ref={(el) => { dotRefs.current["370-80"] = el; }} cx="370" cy="80" r="8.2" fill="#eab308" style={{ opacity: 0, filter: "url(#rf-glow)", transition: "opacity 0.25s ease, transform 0.25s ease", transformBox: "fill-box", transformOrigin: "center" }} />
         <circle ref={(el) => { dotRefs.current["370-220"] = el; }} cx="370" cy="220" r="8.2" fill="#eab308" style={{ opacity: 0, filter: "url(#rf-glow)", transition: "opacity 0.25s ease, transform 0.25s ease", transformBox: "fill-box", transformOrigin: "center" }} />
       </svg>
+      </motion.div>
     </div>
   );
 }

@@ -40,11 +40,32 @@ export function DiagonalFlowBg({ className }: { className?: string }) {
       return (w * Math.abs(Math.sin(rad)) + h * Math.abs(Math.cos(rad))) / 2 + 20;
     }
 
+    const MIN_SPACING = 90;
+
+    function pickOffset(band: number, exclude: Line): number {
+      let best = rnd(-band, band);
+      let bestMinDist = -Infinity;
+      for (let attempt = 0; attempt < 20; attempt++) {
+        const candidate = rnd(-band, band);
+        let minDist = Infinity;
+        for (const other of lines) {
+          if (other === exclude) continue;
+          minDist = Math.min(minDist, Math.abs(other.off - candidate));
+        }
+        if (minDist >= MIN_SPACING) return candidate;
+        if (minDist > bestMinDist) {
+          bestMinDist = minDist;
+          best = candidate;
+        }
+      }
+      return best;
+    }
+
     function spawn(L: Partial<Line>, initial: boolean): Line {
       const span = Math.hypot(W, H) || 1000;
       const band = halfBand();
       const { speed, thickness } = CFG;
-      L.off = rnd(-band, band);
+      L.off = pickOffset(band, L as Line);
       L.len = rnd(span * 0.12, span * 0.45);
       L.a = rnd(0.2, 0.6);
       L.v = speed * rnd(0.7, 2.4);
@@ -55,7 +76,8 @@ export function DiagonalFlowBg({ className }: { className?: string }) {
     }
 
     function build() {
-      lines = Array.from({ length: CFG.count }, () => spawn({}, true));
+      lines = [];
+      for (let i = 0; i < CFG.count; i++) lines.push(spawn({}, true));
     }
 
     function tick(now: number) {

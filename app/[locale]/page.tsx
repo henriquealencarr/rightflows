@@ -108,10 +108,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </AnimateInHero>
           </div>
 
-          {/* Hero visual — mobile: above text (handled by order), desktop: right column */}
-          <AnimateInHero delay={0.3} className="flex items-center justify-center lg:justify-end order-last lg:order-last px-8 sm:px-16 lg:px-0 mt-6 lg:mt-0">
+          {/* Hero visual — mobile: above text (handled by order), desktop: right column.
+              No entrance-animation wrapper: an opacity/transform ancestor blocks the glass
+              panel's backdrop-filter for the duration of the animation, causing a visible
+              delay before the blur kicks in. Rendering it immediately avoids that entirely. */}
+          <div className="flex items-center justify-center lg:justify-end order-last lg:order-last px-8 sm:px-16 lg:px-0 mt-6 lg:mt-0">
             <HeroVisual />
-          </AnimateInHero>
+          </div>
 
         </div>
       </section>

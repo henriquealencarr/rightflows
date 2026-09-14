@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 
 interface AnimateInProps {
   children: ReactNode;
@@ -68,13 +68,25 @@ export function AnimateInStagger({ children, className }: { children: ReactNode;
 }
 
 export function AnimateInHero({ children, className, delay = 0 }: AnimateInProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
   return (
     <motion.div
+      ref={ref}
       className={className}
       initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+      onAnimationComplete={() => {
+        // A lingering inline transform/filter here (even translateY(0px) / blur(0px)) creates a
+        // stacking context that blocks descendant backdrop-filter elements from sampling fixed
+        // content behind them, so clear both once the entrance animation settles.
+        if (ref.current) {
+          ref.current.style.transform = "none";
+          ref.current.style.filter = "none";
+        }
+      }}
     >
       {children}
     </motion.div>
