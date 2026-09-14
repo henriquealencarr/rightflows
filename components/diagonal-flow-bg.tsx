@@ -118,8 +118,12 @@ export function DiagonalFlowBg({ className }: { className?: string }) {
 
         if (CFG.glow) {
           // wide soft halo
-          ctx!.shadowColor = "rgba(255,255,255,0.9)";
-          ctx!.shadowBlur = 26;
+          ctx!.shadowColor = "rgba(255,255,255,1)";
+          ctx!.shadowBlur = 55;
+          ctx!.beginPath();
+          ctx!.moveTo(tx, ty);
+          ctx!.lineTo(hx, hy);
+          ctx!.stroke();
           ctx!.beginPath();
           ctx!.moveTo(tx, ty);
           ctx!.lineTo(hx, hy);
@@ -142,7 +146,7 @@ export function DiagonalFlowBg({ className }: { className?: string }) {
           ctx!.shadowBlur = 16;
           ctx!.fillStyle = `rgba(255,255,255,${Math.min(1, L.a).toFixed(3)})`;
           ctx!.beginPath();
-          ctx!.arc(hx, hy, L.w * 1.1, 0, Math.PI * 2);
+          ctx!.arc(hx, hy, L.w * 3.0, 0, Math.PI * 2);
           ctx!.fill();
         }
       }
