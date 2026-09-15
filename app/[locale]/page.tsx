@@ -60,7 +60,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       {/* Hero */}
       <section className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 flex items-start lg:items-center" style={{ minHeight: "calc(100vh - 72px)" }}>
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-16 items-center w-full pt-32 pb-2 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-16 items-center w-full pt-32 pb-2 lg:py-0">
 
           {/* Text */}
           <div className="text-center lg:text-left">
@@ -76,7 +76,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </AnimateInHero>
 
             <AnimateInHero delay={0.36}>
-              <p className="text-[0.998rem] sm:text-[1.245rem] text-white leading-relaxed mb-12 sm:mb-12">
+              <p className="text-[1.046rem] sm:text-[1.309rem] text-white leading-relaxed mb-12 sm:mb-12">
                 {locale === "pt" ? (
                   <>
                     Atendimento, qualificação e prospecção com IA: leads quentes sem trabalho manual.
