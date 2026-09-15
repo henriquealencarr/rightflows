@@ -79,15 +79,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <p className="text-[1.05rem] sm:text-[1.31rem] text-white leading-relaxed mb-12 sm:mb-12">
                 {locale === "pt" ? (
                   <>
-                    Atendimento, qualificação e prospecção com IA, sem trabalho manual.
+                    Atendimento, qualificação e prospecção com IA: sem perda de leads.
                     <br className="hidden lg:block" />{" "}
-                    Sua equipe recebe o lead pronto pra fechar no seu CRM.
+                    Sua equipe recebe o lead na hora certa, direto no seu CRM.
                   </>
                 ) : (
                   <>
-                    Support, qualification, and prospecting with AI, without manual work.
+                    Support, qualification, and prospecting with AI: no more lost leads.
                     <br className="hidden lg:block" />{" "}
-                    Your team gets the lead ready to close in your CRM.
+                    Your team gets the lead at the right moment, straight into your CRM.
                   </>
                 )}
               </p>
