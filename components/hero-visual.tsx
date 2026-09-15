@@ -92,9 +92,8 @@ export function HeroVisual() {
           className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 w-9 h-9 sm:w-11 sm:h-11 rounded-xl border border-white/10 flex items-center justify-center"
           style={{ background: "rgba(20,20,30,0.6)", backdropFilter: "blur(10px)" }}
         >
-          <svg className="w-4 h-4 sm:w-5 sm:h-5 animate-spin text-purple-400" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.2" strokeWidth="2.5" />
-            <path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+          <svg className="w-6 h-6 sm:w-7 sm:h-7 animate-heartbeat text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" />
           </svg>
         </div>
       </GlassBlurPanel>

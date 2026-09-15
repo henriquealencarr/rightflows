@@ -1,29 +1,25 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { defaultLocale, hasLocale, locales } from "@/lib/i18n";
 
-function getLocale(request: NextRequest): string {
-  const cookieLocale = request.cookies.get("NEXT_LOCALE")?.value;
-  if (cookieLocale && hasLocale(cookieLocale)) return cookieLocale;
-
-  return defaultLocale;
-}
-
+// PT is served with no locale prefix ("/", "/services", ...). EN keeps an
+// explicit "/en" prefix. "/pt/*" URLs redirect to their unprefixed form so
+// there's a single canonical URL per page.
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
-  );
-  if (pathnameHasLocale) return NextResponse.next();
+  if (pathname === "/pt" || pathname.startsWith("/pt/")) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname === "/pt" ? "/" : pathname.slice(3);
+    return NextResponse.redirect(url);
+  }
 
-  const locale = getLocale(request);
+  if (pathname === "/en" || pathname.startsWith("/en/")) {
+    return NextResponse.next();
+  }
+
   const url = request.nextUrl.clone();
-  url.pathname = `/${locale}${pathname}`;
-
-  const response = NextResponse.redirect(url);
-  response.cookies.set("NEXT_LOCALE", locale, { path: "/", maxAge: 60 * 60 * 24 * 365 });
-  return response;
+  url.pathname = `/pt${pathname === "/" ? "" : pathname}`;
+  return NextResponse.rewrite(url);
 }
 
 export const config = {

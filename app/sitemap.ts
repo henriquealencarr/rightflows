@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { locales } from "@/lib/i18n";
+import { locales, publicPath } from "@/lib/i18n";
 import { getCaseSlugs } from "@/lib/cases";
 
 const SITE_URL = "https://rightflows.com.br";
@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const slugs = getCaseSlugs();
 
   const homeEntries: MetadataRoute.Sitemap = locales.map((locale) => ({
-    url: `${SITE_URL}/${locale}`,
+    url: `${SITE_URL}${publicPath(locale)}`,
     lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 1,
@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const caseEntries: MetadataRoute.Sitemap = locales.flatMap((locale) =>
     slugs.map((slug) => ({
-      url: `${SITE_URL}/${locale}/cases/${slug}`,
+      url: `${SITE_URL}${publicPath(locale, `/cases/${slug}`)}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,

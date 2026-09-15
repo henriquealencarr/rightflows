@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import type { Locale } from "@/lib/i18n";
+import { publicPath, type Locale } from "@/lib/i18n";
 import { LanguageSwitcher } from "@/components/language-switcher";
 
 interface NavProps {
@@ -17,7 +17,7 @@ export function Nav({ locale, links, menuFooter }: NavProps) {
   return (
     <>
       <nav className="relative z-50 flex items-center justify-between px-4 sm:px-8 py-5 sm:py-7 max-w-screen-2xl mx-auto">
-        <a href={`/${locale}`} className="flex items-center gap-2 text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100 hover:text-white transition-colors" style={{ fontFamily: "var(--font-syne), sans-serif" }}>
+        <a href={publicPath(locale)} className="flex items-center gap-2 text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100 hover:text-white transition-colors" style={{ fontFamily: "var(--font-syne), sans-serif" }}>
           <img src="/logo5.png" alt="" className="h-9 w-9 sm:h-16 sm:w-16 object-contain" />
           <span className="text-xl sm:text-3xl">Right<span className="text-white">Flows</span></span>
         </a>

@@ -14,8 +14,9 @@ export function LanguageSwitcher({ locale, className }: { locale: Locale; classN
   const pathname = usePathname();
 
   function hrefFor(target: Locale) {
-    const rest = pathname.replace(new RegExp(`^/(${locales.join("|")})`), "") || "/";
-    return `/${target}${rest === "/" ? "" : rest}`;
+    const rest = pathname.replace(/^\/en/, "") || "/";
+    if (target === "pt") return rest;
+    return `/en${rest === "/" ? "" : rest}`;
   }
 
   return (
@@ -28,7 +29,6 @@ export function LanguageSwitcher({ locale, className }: { locale: Locale; classN
             href={hrefFor(l)}
             aria-label={l}
             onClick={(e) => {
-              document.cookie = `NEXT_LOCALE=${l};path=/;max-age=${60 * 60 * 24 * 365}`;
               const hash = window.location.hash;
               if (hash) {
                 e.preventDefault();

@@ -17,3 +17,9 @@ export type { Dictionary };
 export function getDictionary(locale: Locale): Dictionary {
   return dictionaries[locale];
 }
+
+// PT is served with no URL prefix ("/", "/cases/x"); EN keeps "/en" prefix.
+export function publicPath(locale: Locale, rest = ""): string {
+  const prefix = locale === defaultLocale ? "" : `/${locale}`;
+  return `${prefix}${rest}` || "/";
+}

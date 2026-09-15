@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { getCases, getCaseBySlug, getCaseSlugs } from "@/lib/cases";
-import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
+import { getDictionary, hasLocale, locales, publicPath, type Locale } from "@/lib/i18n";
 import { Nav } from "@/components/nav";
 import { Lightbox } from "@/components/lightbox";
 import { CalendlyButton } from "@/components/calendly-button";
@@ -28,12 +28,12 @@ export async function generateMetadata({
     openGraph: {
       title,
       description: c.description,
-      url: `/${rawLocale}/cases/${slug}`,
+      url: publicPath(rawLocale as Locale, `/cases/${slug}`),
       type: "article",
     },
     alternates: {
-      canonical: `/${rawLocale}/cases/${slug}`,
-      languages: Object.fromEntries(locales.map((l) => [l, `/${l}/cases/${slug}`])),
+      canonical: publicPath(rawLocale as Locale, `/cases/${slug}`),
+      languages: Object.fromEntries(locales.map((l) => [l, publicPath(l, `/cases/${slug}`)])),
     },
   };
 }
@@ -67,10 +67,10 @@ export default async function CasePage({
       <Nav
         locale={locale}
         links={[
-          { label: dict.nav.services, href: `/${locale}#services` },
-          { label: dict.nav.cases, href: `/${locale}#process` },
-          { label: dict.nav.about, href: `/${locale}#about` },
-          { label: dict.nav.contact, href: `/${locale}#contact` },
+          { label: dict.nav.services, href: `${publicPath(locale)}#services` },
+          { label: dict.nav.cases, href: `${publicPath(locale)}#process` },
+          { label: dict.nav.about, href: `${publicPath(locale)}#about` },
+          { label: dict.nav.contact, href: `${publicPath(locale)}#contact` },
         ]}
         menuFooter={dict.nav.menuFooter}
       />
@@ -169,7 +169,7 @@ export default async function CasePage({
         <div className="mt-16 sm:mt-24 pt-10 border-t border-zinc-800/50">
           <p className="text-base font-mono font-bold text-purple-400 uppercase tracking-widest mb-4">{dict.case.nextCase}</p>
           <Link
-            href={`/${locale}/cases/${next.slug}`}
+            href={publicPath(locale, `/cases/${next.slug}`)}
             className="glass-card gradient-border rounded-2xl p-6 sm:p-10 flex items-center justify-between gap-4 sm:gap-6 hover:bg-white/[0.06] transition-all duration-300 group"
           >
             <div>

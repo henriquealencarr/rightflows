@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Syne } from "next/font/google";
 import Script from "next/script";
 import "../globals.css";
-import { locales, hasLocale, getDictionary, type Locale } from "@/lib/i18n";
+import { locales, hasLocale, getDictionary, publicPath, type Locale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 
 const geistSans = Geist({
@@ -33,6 +33,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!hasLocale(locale)) return {};
   const dict = getDictionary(locale);
+  const path = publicPath(locale);
 
   return {
     metadataBase: new URL("https://rightflows.com.br"),
@@ -42,15 +43,15 @@ export async function generateMetadata({
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
-      url: `/${locale}`,
+      url: path,
       type: "website",
     },
     alternates: {
-      canonical: `/${locale}`,
+      canonical: path,
       languages: {
         en: "/en",
-        pt: "/pt",
-        "x-default": "/pt",
+        pt: "/",
+        "x-default": "/",
       },
     },
   };
