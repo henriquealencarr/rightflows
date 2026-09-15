@@ -14,7 +14,7 @@ export function LanguageSwitcher({ locale, className }: { locale: Locale; classN
   const pathname = usePathname();
 
   function hrefFor(target: Locale) {
-    const rest = pathname.replace(/^\/en/, "") || "/";
+    const rest = pathname.replace(/^\/(en|pt)(?=\/|$)/, "") || "/";
     if (target === "pt") return rest;
     return `/en${rest === "/" ? "" : rest}`;
   }
