@@ -76,18 +76,18 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </AnimateInHero>
 
             <AnimateInHero delay={0.36}>
-              <p className="text-[1.05rem] sm:text-[1.31rem] text-white leading-relaxed mb-12 sm:mb-12">
+              <p className="text-[0.998rem] sm:text-[1.245rem] text-white leading-relaxed mb-12 sm:mb-12">
                 {locale === "pt" ? (
                   <>
-                    Atendimento, qualificação e prospecção com IA: sem perda de leads.
+                    Atendimento, qualificação e prospecção com IA: leads quentes sem trabalho manual.
                     <br className="hidden lg:block" />{" "}
-                    Sua equipe recebe o lead na hora certa, direto no seu CRM.
+                    Sua equipe recebe na hora certa apenas os leads que passaram no filtro.
                   </>
                 ) : (
                   <>
-                    Support, qualification, and prospecting with AI: no more lost leads.
+                    Support, qualification, and prospecting with AI: hot leads without manual work.
                     <br className="hidden lg:block" />{" "}
-                    Your team gets the lead at the right moment, straight into your CRM.
+                    Your team gets, at the right moment, only the leads that passed the filter.
                   </>
                 )}
               </p>

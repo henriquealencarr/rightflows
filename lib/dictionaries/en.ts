@@ -29,7 +29,7 @@ export const en: Dictionary = {
     headlineLine1: "Your sales team,",
     headlineLine2: "always converting.",
     subhead:
-      "Support, qualification, and prospecting with AI: no more lost leads. Your team gets the lead at the right moment, straight into your CRM.",
+      "Support, qualification, and prospecting with AI: hot leads without manual work. Your team gets, at the right moment, only the leads that passed the filter.",
     ctaCases: "View Cases",
     ctaContact: "I want a free diagnosis",
   },
