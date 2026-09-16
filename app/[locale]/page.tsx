@@ -234,7 +234,26 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <footer className="relative z-10 border-t border-zinc-800/50 px-4 sm:px-8 pt-16 pb-10 sm:pt-12 sm:pb-12">
         <div className="max-w-screen-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
           <span className="font-mono text-sm sm:text-base text-white mt-6 sm:mt-0">Right<span className="text-white font-semibold">Flows</span></span>
-          <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-white font-bold tracking-wide">{dict.footer.tagline}</span>
+          <div className="flex items-center gap-3">
+            <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-white font-bold tracking-wide">{dict.footer.tagline}</span>
+            <span className="text-zinc-600">|</span>
+            <Link
+              href="https://www.linkedin.com/company/rightflows/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="flex items-center text-white hover:text-zinc-400 transition-colors"
+            >
+              <svg
+                className="w-5 h-5 block"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </footer>
     </main>
