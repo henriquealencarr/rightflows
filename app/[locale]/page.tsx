@@ -79,13 +79,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <p className="text-[1.046rem] sm:text-[1.309rem] text-white leading-relaxed mb-12 sm:mb-12">
                 {locale === "pt" ? (
                   <>
-                    Atendimento, qualificação e prospecção com IA.
+                    Atendimento, qualificação e prospecção potencializados com IA.
                     <br className="hidden lg:block" />{" "}
                     Sua equipe recebe apenas leads quentes, na hora certa, direto no seu CRM.
                   </>
                 ) : (
                   <>
-                    Support, qualification, and prospecting with AI.
+                    Support, qualification, and prospecting powered by AI.
                     <br className="hidden lg:block" />{" "}
                     Your team gets only hot leads, at the right time, straight into your CRM.
                   </>
@@ -125,7 +125,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <AnimateIn delay={0}>
             <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.services.eyebrow}</p>
           </AnimateIn>
-          <AnimateInH2 delay={0.1} className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.85rem] font-bold leading-tight">{dict.services.heading}</AnimateInH2>
+          <AnimateInH2 delay={0.1} className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.62rem] font-bold leading-tight">{dict.services.heading}</AnimateInH2>
         </div>
         <AnimateIn delay={0.15}>
           <ServicesTabs
