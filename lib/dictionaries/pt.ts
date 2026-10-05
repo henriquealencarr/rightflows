@@ -4,7 +4,7 @@ export const pt: Dictionary = {
   meta: {
     title: "RightFlows - Seu comercial, potencializado por IA.",
     description:
-      "A RightFlows automatiza atendimento, qualificação e prospecção com IA. Sua equipe recebe apenas leads quentes, na hora certa, direto no seu CRM.",
+      "A RightFlows automatiza atendimento, qualificação e prospecção com IA. Sua equipe recebe apenas leads quentes, na hora certa, sem trabalho manual.",
     keywords: [
       "Automação com IA",
       "Agência de IA",
@@ -29,7 +29,7 @@ export const pt: Dictionary = {
     headlineLine1: "Seu comercial,",
     headlineLine2: "sempre convertendo.",
     subhead:
-      "Atendimento, qualificação e prospecção com IA. Sua equipe recebe apenas leads quentes, na hora certa, direto no seu CRM.",
+      "Atendimento, qualificação e prospecção com IA. Sua equipe recebe apenas leads quentes, na hora certa, sem trabalho manual.",
     ctaCases: "Ver Cases",
     ctaContact: "Quero um diagnóstico gratuito",
   },

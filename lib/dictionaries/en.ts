@@ -4,7 +4,7 @@ export const en: Dictionary = {
   meta: {
     title: "RightFlows - Your sales team, powered by AI.",
     description:
-      "RightFlows automates outreach, qualification, and prospecting with AI. Your team gets only hot leads, at the right time, straight into your CRM.",
+      "RightFlows automates outreach, qualification, and prospecting with AI. Your team gets only hot leads, at the right time, with no manual work.",
     keywords: [
       "AI Automation",
       "AI Agency",
@@ -29,7 +29,7 @@ export const en: Dictionary = {
     headlineLine1: "Your sales team,",
     headlineLine2: "always converting.",
     subhead:
-      "Support, qualification, and prospecting with AI. Your team gets only hot leads, at the right time, straight into your CRM.",
+      "Support, qualification, and prospecting with AI. Your team gets only hot leads, at the right time, with no manual work.",
     ctaCases: "View Cases",
     ctaContact: "I want a free diagnosis",
   },

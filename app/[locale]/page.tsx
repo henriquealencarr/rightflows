@@ -81,13 +81,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   <>
                     Atendimento, qualificação e prospecção potencializados com IA.
                     <br className="hidden lg:block" />{" "}
-                    Sua equipe recebe apenas leads quentes, na hora certa, direto no seu CRM.
+                    Sua equipe recebe apenas leads quentes, na hora certa, sem trabalho manual.
                   </>
                 ) : (
                   <>
                     Support, qualification, and prospecting powered by AI.
                     <br className="hidden lg:block" />{" "}
-                    Your team gets only hot leads, at the right time, straight into your CRM.
+                    Your team gets only hot leads, at the right time, with no manual work.
                   </>
                 )}
               </p>
