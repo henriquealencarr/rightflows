@@ -86,7 +86,7 @@ export function HeroVisual() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-[440px] lg:max-w-[616px] aspect-[1.55] ml-auto lg:translate-x-12">
+    <div className="relative w-full max-w-[440px] lg:max-w-[38.5rem] aspect-[1.55] ml-auto">
       <GlassBlurPanel className="absolute inset-[6%] rounded-3xl overflow-hidden">
         <div
           className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 w-9 h-9 sm:w-11 sm:h-11 rounded-xl border border-white/10 flex items-center justify-center"

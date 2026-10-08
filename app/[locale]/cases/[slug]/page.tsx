@@ -75,7 +75,7 @@ export default async function CasePage({
         menuFooter={dict.nav.menuFooter}
       />
 
-      <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-10 sm:py-20">
+      <div className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] py-10 sm:py-20">
         {/* Header */}
         <div className="mb-10 sm:mb-16 max-w-4xl">
           <div className="flex items-center gap-3 mb-4 sm:mb-6">
@@ -188,8 +188,8 @@ export default async function CasePage({
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-zinc-800/50 px-4 sm:px-8 pt-16 pb-10 sm:pt-12 sm:pb-12 mt-10 sm:mt-20">
-        <div className="max-w-screen-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
+      <footer className="relative z-10 border-t border-zinc-800/50 px-4 sm:px-8 lg:px-[6vw] pt-16 pb-10 sm:pt-12 sm:pb-12 mt-10 sm:mt-20">
+        <div className="max-w-[1920px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
           <span className="font-mono text-sm sm:text-base text-white mt-6 sm:mt-0">Right<span className="text-white font-semibold">Flows</span></span>
           <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-white font-bold tracking-wide">{dict.footer.tagline}</span>
         </div>

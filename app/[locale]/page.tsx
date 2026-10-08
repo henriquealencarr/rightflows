@@ -59,7 +59,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       />
 
       {/* Hero */}
-      <section className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 flex items-start lg:items-center" style={{ minHeight: "calc(100vh - 72px)" }}>
+      <section className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] flex items-start lg:items-center" style={{ minHeight: "calc(100vh - 72px)" }}>
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-16 items-center w-full pt-32 pb-2 lg:py-0">
 
           {/* Text */}
@@ -76,7 +76,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </AnimateInHero>
 
             <AnimateInHero delay={0.36}>
-              <p className="text-[1.046rem] sm:text-[1.309rem] text-white leading-relaxed mb-12 sm:mb-12">
+              <p className="text-[1.046rem] sm:text-[1.2rem] text-white leading-relaxed mb-12 sm:mb-12">
                 {locale === "pt" ? (
                   <>
                     Atendimento, qualificação e prospecção potencializados com IA.
@@ -120,7 +120,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* Services */}
-      <section id="services" className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-4 sm:py-40">
+      <section id="services" className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] py-4 sm:py-40">
         <div className="mb-10 sm:mb-16 max-w-2xl lg:max-w-3xl text-center lg:text-left">
           <AnimateIn delay={0}>
             <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.services.eyebrow}</p>
@@ -135,7 +135,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* How we work */}
-      <section id="process" className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 pt-48 pb-20 sm:py-40">
+      <section id="process" className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] pt-48 pb-20 sm:py-40">
         <AnimateIn>
           <ProcessAccordion
             steps={dict.process.steps}
@@ -146,7 +146,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* Scenario */}
-      <section className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 pt-32 pb-20 sm:py-40">
+      <section className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] pt-32 pb-20 sm:py-40">
         <AnimateIn className="mb-10 sm:mb-16 max-w-3xl text-center lg:text-left">
           <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.scenario.eyebrow}</p>
           <AnimateInH2 className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.85rem] font-bold leading-tight">{dict.scenario.heading}</AnimateInH2>
@@ -180,7 +180,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* Numbers */}
-      <section className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-20 sm:py-40">
+      <section className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] py-20 sm:py-40">
         <AnimateIn className="mb-14 sm:mb-20">
           <LogoCarousel />
         </AnimateIn>
@@ -189,7 +189,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
 
       {/* About */}
-      <section id="about" className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-20 sm:py-40">
+      <section id="about" className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] py-20 sm:py-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-start">
           <div className="text-center lg:text-left">
             <AnimateIn delay={0}>
@@ -214,7 +214,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* Contact */}
-      <section id="contact" className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-8 py-20 sm:py-40">
+      <section id="contact" className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] py-20 sm:py-40">
         <AnimateIn>
           <div className="glass-card rounded-2xl pt-[4.4rem] sm:pt-[6.6rem] lg:pt-[8.8rem] px-8 sm:px-16 lg:px-24 pb-0 text-center glow-purple">
             <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-4 sm:mb-6">{dict.contact.eyebrow}</p>
@@ -231,8 +231,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-zinc-800/50 px-4 sm:px-8 pt-16 pb-10 sm:pt-12 sm:pb-12">
-        <div className="max-w-screen-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
+      <footer className="relative z-10 border-t border-zinc-800/50 px-4 sm:px-8 lg:px-[6vw] pt-16 pb-10 sm:pt-12 sm:pb-12">
+        <div className="max-w-[1920px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
           <span className="font-mono text-sm sm:text-base text-white mt-6 sm:mt-0">Right<span className="text-white font-semibold">Flows</span></span>
           <div className="flex items-center gap-3">
             <span className="font-sans text-[0.8rem] sm:text-[0.95rem] text-white font-bold tracking-wide">{dict.footer.tagline}</span>

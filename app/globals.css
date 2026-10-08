@@ -88,6 +88,14 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Desktop: scale the rem base with viewport width so the whole layout keeps
+     the same proportions on small laptops and large monitors (16px at 1512px). */
+  @media (min-width: 1024px) {
+    html {
+      font-size: clamp(13px, 1.0582vw, 20px);
+    }
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
