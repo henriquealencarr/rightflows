@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, AnimatePresence, PresenceContext, useInView } from "framer-motion";
 import {
   AnimatedMessageCircle,
   AnimatedFileSearch,
@@ -75,6 +75,9 @@ function BulletText({ text }: { text: string }) {
 function ServiceSections({ sections }: { sections?: Service["sections"] }) {
   if (!sections?.length) return null;
   return (
+    // Reset presence context: the parent AnimatePresence uses initial={false}, which would
+    // otherwise skip the bullets' scroll-in animation for the item that starts open.
+    <PresenceContext.Provider value={null}>
     <div className="flex flex-col gap-4 text-left">
       {sections.map((section, si) => {
         // Number the blocks only when there is more than one.
@@ -106,17 +109,25 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
             </div>
           )}
           <ul className="flex flex-col gap-3">
-            {section.bullets.map((b) => (
-              <li key={b} className="flex gap-3 text-[1.05rem] text-white leading-relaxed">
+            {section.bullets.map((b, bi) => (
+              <motion.li
+                key={b}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.8 }}
+                transition={{ duration: 0.5, delay: bi * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="flex gap-3 text-[1.05rem] text-white leading-relaxed"
+              >
                 <span className="mt-[0.6em] shrink-0 w-1.5 h-1.5 rounded-full bg-purple-400" />
                 <BulletText text={b} />
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
         );
       })}
     </div>
+    </PresenceContext.Provider>
   );
 }
 
@@ -168,7 +179,12 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                       style={{ overflow: "hidden" }}
                     >
-                      <div
+                      {/* Content fades/slides in on its own so tall items (taller than the
+                          screen) still show a visible opening animation, not just the height. */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
                         className="px-6 pb-10 pt-6 flex flex-col gap-4"
                         style={{ background: "rgba(255,255,255,0.03)" }}
                       >
@@ -183,7 +199,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                             <ServiceSections sections={s.sections} />
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     </motion.div>
                   )}
                 </AnimatePresence>
