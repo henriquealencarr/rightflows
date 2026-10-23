@@ -27,7 +27,7 @@ export const pt: Dictionary = {
   hero: {
     badge: "Aceitando novos clientes",
     headlineLine1: "Seu comercial,",
-    headlineLine2: "sempre convertendo.",
+    headlineLine2: "com a agenda cheia.",
     subhead:
       "Atendimento, qualificação e prospecção com IA. Sua equipe recebe apenas leads quentes, na hora certa, sem trabalho manual.",
     ctaCases: "Ver Cases",
