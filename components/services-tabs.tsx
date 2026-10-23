@@ -101,7 +101,7 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
               )}
             </div>
           )}
-          <ul className="flex flex-col gap-3">
+          <ul className={`flex flex-col gap-3 ${SectionIcon ? "sm:pl-[3.75rem]" : ""}`}>
             {section.bullets.map((b) => (
               <li key={b} className="flex gap-3 text-[1.05rem] text-white leading-relaxed">
                 <span className="mt-[0.6em] shrink-0 w-1.5 h-1.5 rounded-full bg-purple-400" />
@@ -227,8 +227,8 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
               {current.description && <p className="text-[1.05rem] text-white leading-relaxed mb-5">{current.description}</p>}
               <ServiceSections sections={current.sections} />
             </div>
-            <div className="shrink-0 w-48 h-48 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
-              <IconReveal icon={Icon} className="w-20 h-20 text-purple-400" strokeWidth={1} />
+            <div className="shrink-0 w-36 h-36 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
+              <IconReveal icon={Icon} className="w-14 h-14 text-purple-400" strokeWidth={1} />
             </div>
           </motion.div>
           )}
