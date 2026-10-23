@@ -174,7 +174,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                           </div>
                           <div>
                             <h3 className="text-[1.155rem] font-semibold text-white mb-3">{s.title}</h3>
-                            {s.lead && <p className="text-[1.15rem] font-semibold italic text-white leading-snug mb-8">{s.lead}</p>}
+                            {s.lead && <p className="text-[1.1rem] font-semibold italic text-white leading-snug mb-8">{s.lead}</p>}
                             {s.description && <p className="text-[1.05rem] text-white leading-relaxed mb-5">{s.description}</p>}
                             <ServiceSections sections={s.sections} />
                           </div>
@@ -224,7 +224,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
             <div className="flex flex-row gap-10 items-start">
               <div className="flex-1 min-w-0">
                 <h3 className="text-[1.575rem] font-semibold text-white mb-4">{current.title}</h3>
-                {current.lead && <p className="text-[1.22rem] font-semibold italic text-white leading-snug mb-8">{current.lead}</p>}
+                {current.lead && <p className="text-[1.15rem] font-semibold italic text-white leading-snug mb-8">{current.lead}</p>}
                 {current.description && <p className="text-[1.05rem] text-white leading-relaxed mb-5">{current.description}</p>}
               </div>
               <div className="shrink-0 -mt-8 w-36 h-36 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
