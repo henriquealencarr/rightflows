@@ -41,12 +41,12 @@ export const services: Service[] = [
       },
       pt: {
         title: "Qualificação e Atendimento",
-        lead: "Quem responde primeiro, vende mais. O agente responde em minutos e já sabe com quem está falando.",
+        lead: "Quem responde primeiro, vende mais. O agente pesquisa com quem está falando e responde na hora.",
         sections: [
           {
             label: "Com o lead",
             intro:
-              "O lead preenche o formulário e logo em seguida recebe um áudio personalizado de um agente de IA, no WhatsApp ou no canal que você preferir. Enquanto a conversa acontece, o agente:",
+              "O lead preenche o formulário e, em menos de 1 minuto, recebe um áudio personalizado de um agente de IA, no WhatsApp ou no canal que você preferir. Enquanto a conversa acontece, o agente:",
             bullets: [
               "Pesquisa antes de falar: levanta dados do lead e da empresa na internet, e a primeira mensagem já chega com contexto",
               "Qualifica sem interrogatório: pergunta só o que a pesquisa não encontrou",
