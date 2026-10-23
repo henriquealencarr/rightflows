@@ -79,9 +79,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <p className="text-[1.046rem] sm:text-[1.2rem] text-white leading-relaxed mb-12 sm:mb-12">
                 {locale === "pt" ? (
                   <>
-                    Atendimento, qualificação e prospecção potencializados com IA.
+                    Agentes de IA que atendem na hora e lotam o seu CRM automaticamente
                     <br className="hidden lg:block" />{" "}
-                    Sua equipe recebe apenas leads quentes, na hora certa, sem trabalho manual.
+                    só com leads qualificados, no inbound e no outbound.
                   </>
                 ) : (
                   <>
