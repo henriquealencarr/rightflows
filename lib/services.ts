@@ -13,7 +13,12 @@ import {
 export interface ServiceTranslation {
   title: string;
   description: string;
-  bullets?: string[];
+  sections?: ServiceSection[];
+}
+
+export interface ServiceSection {
+  intro?: string;
+  bullets: string[];
 }
 
 export interface Service {
@@ -35,14 +40,24 @@ export const services: Service[] = [
       pt: {
         title: "Qualificação e Atendimento",
         description:
-          "O lead preenche o formulário e, em minutos, recebe um áudio personalizado de um agente de IA. No WhatsApp ou no canal que você preferir.",
-        bullets: [
-          "Pesquisa o lead e a empresa na internet antes do primeiro contato",
-          "Preenche o CRM com o que define o Fit: cargo, setor, tamanho da empresa e os critérios do seu nicho",
-          "Pergunta ao lead só o que a pesquisa não encontrou",
-          "Marca a reunião na agenda do próximo vendedor da fila",
-          "Atualiza o status da negociação no CRM a cada etapa",
-          "Faz o follow-up sozinho quando o lead para de responder",
+          "O lead preenche o formulário e, em minutos, recebe um áudio personalizado de um agente de IA, no WhatsApp ou no canal que você preferir. Enquanto a conversa acontece, o agente:",
+        sections: [
+          {
+            bullets: [
+              "Pesquisa antes de falar: levanta o lead e a empresa na internet, e a primeira mensagem já chega com contexto",
+              "Qualifica sem interrogatório: pergunta só o que a pesquisa não encontrou",
+              "Agenda sem vai e volta: marca a reunião direto na agenda do próximo vendedor da fila",
+              "Não deixa o lead esfriar: faz o follow-up sozinho quando ele para de responder",
+            ],
+          },
+          {
+            intro: "Do lado do vendedor, os dados no CRM são enriquecidos automaticamente:",
+            bullets: [
+              "Fit pronto: cargo, setor, tamanho da empresa e os critérios do seu nicho",
+              "Histórico completo: tudo o que o lead respondeu, organizado numa nota só",
+              "Funil em dia: a negociação muda de etapa sozinha, do primeiro contato à reunião marcada",
+            ],
+          },
         ],
       },
     },
