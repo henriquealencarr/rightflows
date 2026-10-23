@@ -92,16 +92,12 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
             <div className="flex flex-col items-start gap-4 mb-4">
               {numbered && (
                 <div className="flex items-center gap-4">
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: false, amount: 0.8 }}
-                    transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
-                    className="shrink-0 w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-lg font-semibold text-purple-400"
+                  <div
+                    className="shrink-0 w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-2xl font-extrabold text-purple-400"
                     style={{ background: "rgba(124,58,237,0.08)" }}
                   >
                     {si + 1}
-                  </motion.div>
+                  </div>
                   {section.label && (
                     <h4 className="text-[1.25rem] font-semibold text-white">{section.label}</h4>
                   )}
