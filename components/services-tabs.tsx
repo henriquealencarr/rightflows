@@ -55,6 +55,21 @@ interface Service {
   id: string;
   title: string;
   description: string;
+  bullets?: string[];
+}
+
+function ServiceBullets({ bullets, className = "" }: { bullets?: string[]; className?: string }) {
+  if (!bullets?.length) return null;
+  return (
+    <ul className={`mt-5 flex flex-col gap-3 text-left ${className}`}>
+      {bullets.map((b) => (
+        <li key={b} className="flex gap-3 text-[1.05rem] text-white leading-relaxed">
+          <span className="mt-[0.6em] shrink-0 w-1.5 h-1.5 rounded-full bg-purple-400" />
+          <span>{b}</span>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 interface ServicesTabsProps {
@@ -116,6 +131,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                           <div>
                             <h3 className="text-[1.155rem] font-semibold text-white mb-3">{s.title}</h3>
                             <p className="text-[1.05rem] text-white leading-relaxed">{s.description}</p>
+                            <ServiceBullets bullets={s.bullets} />
                           </div>
                         </div>
                       </div>
@@ -163,6 +179,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
             <div className="flex-1 min-w-0">
               <h3 className="text-[1.575rem] font-semibold text-white mb-4">{current.title}</h3>
               <p className="text-[1.05rem] text-white leading-relaxed">{current.description}</p>
+              <ServiceBullets bullets={current.bullets} />
             </div>
             <div className="shrink-0 w-48 h-48 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
               <IconReveal icon={Icon} className="w-20 h-20 text-purple-400" strokeWidth={1} />

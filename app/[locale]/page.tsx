@@ -129,7 +129,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
         <AnimateIn delay={0.15}>
           <ServicesTabs
-            services={services.map(({ id, title, description }) => ({ id, title, description }))}
+            services={services.map(({ id, title, description, bullets }) => ({ id, title, description, bullets }))}
           />
         </AnimateIn>
       </section>

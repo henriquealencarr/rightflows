@@ -13,6 +13,7 @@ import {
 export interface ServiceTranslation {
   title: string;
   description: string;
+  bullets?: string[];
 }
 
 export interface Service {
@@ -32,9 +33,16 @@ export const services: Service[] = [
           "Speed-to-lead or SDR agents that welcome the lead, qualify, share business information, book appointments, log customer data, and re-engage with follow-ups on WhatsApp, Telegram, or any communication channel. Your team monitors, the AI executes, 24/7, no days off.",
       },
       pt: {
-        title: "Agentes de IA em Chatbots",
+        title: "Qualificação e Atendimento",
         description:
-          "Agentes de resposta rápida ou agentes SDR que recepcionam o lead, qualificam, passam informações do negócio, fazem agendamentos, anotam dados do cliente e reengajam com follow-ups no WhatsApp, Telegram ou qualquer canal de comunicação. Seu time monitora, a IA executa, 24/7, sem folga.",
+          "O lead preenche o formulário e, em minutos, recebe um áudio personalizado de um agente de IA. No WhatsApp ou no canal que você preferir.",
+        bullets: [
+          "Pesquisa o lead e a empresa na internet antes do primeiro contato.",
+          "Pergunta só o que falta para qualificar: cargo, tamanho da empresa e o que mais importar para o seu negócio.",
+          "Marca a reunião na agenda do próximo vendedor da fila.",
+          "Registra tudo no CRM e atualiza o status da negociação.",
+          "Faz o follow-up sozinho quando o lead para de responder.",
+        ],
       },
     },
   },
