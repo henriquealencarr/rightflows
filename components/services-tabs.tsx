@@ -218,18 +218,21 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:flex rounded-2xl border border-white/8 overflow-hidden p-16 flex-row gap-10 items-start h-full"
+            className="hidden lg:flex rounded-2xl border border-white/8 overflow-hidden p-16 flex-col h-full"
             style={{ background: "rgba(255,255,255,0.04)" }}
           >
-            <div className="flex-1 min-w-0">
-              <h3 className="text-[1.575rem] font-semibold text-white mb-4">{current.title}</h3>
-              {current.lead && <p className="text-[1.22rem] font-semibold italic text-white leading-snug mb-8">{current.lead}</p>}
-              {current.description && <p className="text-[1.05rem] text-white leading-relaxed mb-5">{current.description}</p>}
-              <ServiceSections sections={current.sections} />
+            <div className="flex flex-row gap-10 items-start">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-[1.575rem] font-semibold text-white mb-4">{current.title}</h3>
+                {current.lead && <p className="text-[1.22rem] font-semibold italic text-white leading-snug mb-8">{current.lead}</p>}
+                {current.description && <p className="text-[1.05rem] text-white leading-relaxed mb-5">{current.description}</p>}
+              </div>
+              <div className="shrink-0 -mt-8 w-36 h-36 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
+                <IconReveal icon={Icon} className="w-14 h-14 text-purple-400" strokeWidth={1} />
+              </div>
             </div>
-            <div className="shrink-0 w-36 h-36 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
-              <IconReveal icon={Icon} className="w-14 h-14 text-purple-400" strokeWidth={1} />
-            </div>
+            {/* Sections span the full panel width, below the title row and icon. */}
+            <ServiceSections sections={current.sections} />
           </motion.div>
           )}
         </AnimatePresence>
