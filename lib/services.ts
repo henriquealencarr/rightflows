@@ -41,7 +41,7 @@ export const services: Service[] = [
       },
       pt: {
         title: "Qualificação e Atendimento",
-        lead: "Quem responde primeiro, vende mais. Nosso agente de IA pesquisa o lead e inicia uma conversa em menos de 1 minuto.",
+        lead: "Quem responde primeiro, vende mais. Nosso agente de IA pesquisa, qualifica e inicia uma conversa com o lead em menos de 1 minuto.",
         sections: [
           {
             label: "Com o lead",
