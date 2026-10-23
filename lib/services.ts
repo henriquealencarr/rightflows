@@ -37,7 +37,7 @@ export const services: Service[] = [
         description:
           "O lead preenche o formulário e, em minutos, recebe um áudio personalizado de um agente de IA. No WhatsApp ou no canal que você preferir.",
         bullets: [
-          "Pesquisa o lead e a empresa na internet antes do primeiro contato.",
+          "Pesquisa o lead e a empresa na internet antes do primeiro contato e enriquece com dados no CRM.",
           "Pergunta só o que falta para qualificar: cargo, tamanho da empresa e o que mais importar para o seu negócio.",
           "Marca a reunião na agenda do próximo vendedor da fila.",
           "Registra tudo no CRM e atualiza o status da negociação.",
