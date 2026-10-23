@@ -55,7 +55,7 @@ interface Service {
   id: string;
   title: string;
   lead?: string;
-  description: string;
+  description?: string;
   sections?: { intro?: string; bullets: string[] }[];
 }
 
@@ -74,9 +74,13 @@ function BulletText({ text }: { text: string }) {
 function ServiceSections({ sections }: { sections?: Service["sections"] }) {
   if (!sections?.length) return null;
   return (
-    <>
+    <div className="flex flex-col gap-4 text-left">
       {sections.map((section, si) => (
-        <div key={si} className={`${si > 0 ? "mt-14" : "mt-5"} text-left`}>
+        <div
+          key={si}
+          className="rounded-2xl border border-white/8 p-6 sm:p-8"
+          style={{ background: "rgba(255,255,255,0.04)" }}
+        >
           {section.intro && (
             <p className="text-[1.05rem] text-white leading-relaxed mb-4">{section.intro}</p>
           )}
@@ -90,7 +94,7 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
           </ul>
         </div>
       ))}
-    </>
+    </div>
   );
 }
 
@@ -153,7 +157,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                           <div>
                             <h3 className="text-[1.155rem] font-semibold text-white mb-3">{s.title}</h3>
                             {s.lead && <p className="text-[1.15rem] font-semibold italic text-white leading-snug mb-8">{s.lead}</p>}
-                            <p className="text-[1.05rem] text-white leading-relaxed">{s.description}</p>
+                            {s.description && <p className="text-[1.05rem] text-white leading-relaxed mb-5">{s.description}</p>}
                             <ServiceSections sections={s.sections} />
                           </div>
                         </div>
@@ -202,7 +206,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
             <div className="flex-1 min-w-0">
               <h3 className="text-[1.575rem] font-semibold text-white mb-4">{current.title}</h3>
               {current.lead && <p className="text-[1.22rem] font-semibold italic text-white leading-snug mb-8">{current.lead}</p>}
-              <p className="text-[1.05rem] text-white leading-relaxed">{current.description}</p>
+              {current.description && <p className="text-[1.05rem] text-white leading-relaxed mb-5">{current.description}</p>}
               <ServiceSections sections={current.sections} />
             </div>
             <div className="shrink-0 w-48 h-48 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
