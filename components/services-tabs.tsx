@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import { Bot, UserRound } from "lucide-react";
 import {
   AnimatedMessageCircle,
   AnimatedFileSearch,
@@ -56,8 +57,10 @@ interface Service {
   title: string;
   lead?: string;
   description?: string;
-  sections?: { intro?: string; bullets: string[] }[];
+  sections?: { icon?: "agent" | "seller"; intro?: string; bullets: string[] }[];
 }
+
+const sectionIconMap = { agent: Bot, seller: UserRound };
 
 // Bullets written as "Label: text" get the label in bold.
 function BulletText({ text }: { text: string }) {
@@ -75,14 +78,28 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
   if (!sections?.length) return null;
   return (
     <div className="flex flex-col gap-4 text-left">
-      {sections.map((section, si) => (
+      {sections.map((section, si) => {
+        const SectionIcon = section.icon ? sectionIconMap[section.icon] : null;
+        return (
         <div
           key={si}
           className="rounded-2xl border border-white/8 p-6 sm:p-8"
           style={{ background: "rgba(255,255,255,0.04)" }}
         >
-          {section.intro && (
-            <p className="text-[1.05rem] text-white leading-relaxed mb-4">{section.intro}</p>
+          {(SectionIcon || section.intro) && (
+            <div className="flex items-start gap-4 mb-4">
+              {SectionIcon && (
+                <div
+                  className="shrink-0 w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center"
+                  style={{ background: "rgba(124,58,237,0.08)" }}
+                >
+                  <SectionIcon className="w-5 h-5 text-purple-400" strokeWidth={1.5} />
+                </div>
+              )}
+              {section.intro && (
+                <p className="text-[1.05rem] text-white leading-relaxed">{section.intro}</p>
+              )}
+            </div>
           )}
           <ul className="flex flex-col gap-3">
             {section.bullets.map((b) => (
@@ -93,7 +110,8 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
             ))}
           </ul>
         </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
