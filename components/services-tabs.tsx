@@ -54,6 +54,7 @@ const iconMap: Record<string, (props: AnimatedIconProps) => React.JSX.Element> =
 interface Service {
   id: string;
   title: string;
+  lead?: string;
   description: string;
   sections?: { intro?: string; bullets: string[] }[];
 }
@@ -151,6 +152,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                           </div>
                           <div>
                             <h3 className="text-[1.155rem] font-semibold text-white mb-3">{s.title}</h3>
+                            {s.lead && <p className="text-[1.05rem] text-white leading-relaxed mb-4">{s.lead}</p>}
                             <p className="text-[1.05rem] text-white leading-relaxed">{s.description}</p>
                             <ServiceSections sections={s.sections} />
                           </div>
@@ -199,6 +201,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
           >
             <div className="flex-1 min-w-0">
               <h3 className="text-[1.575rem] font-semibold text-white mb-4">{current.title}</h3>
+              {current.lead && <p className="text-[1.05rem] text-white leading-relaxed mb-4">{current.lead}</p>}
               <p className="text-[1.05rem] text-white leading-relaxed">{current.description}</p>
               <ServiceSections sections={current.sections} />
             </div>

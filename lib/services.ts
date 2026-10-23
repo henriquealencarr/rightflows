@@ -12,6 +12,7 @@ import {
 
 export interface ServiceTranslation {
   title: string;
+  lead?: string;
   description: string;
   sections?: ServiceSection[];
 }
@@ -39,6 +40,7 @@ export const services: Service[] = [
       },
       pt: {
         title: "Qualificação e Atendimento",
+        lead: "Quem responde primeiro, vende mais. O agente responde em minutos e já sabe com quem está falando.",
         description:
           "O lead preenche o formulário e, em minutos, recebe um áudio personalizado de um agente de IA, no WhatsApp ou no canal que você preferir. Enquanto a conversa acontece, o agente:",
         sections: [
