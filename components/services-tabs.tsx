@@ -152,7 +152,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                           </div>
                           <div>
                             <h3 className="text-[1.155rem] font-semibold text-white mb-3">{s.title}</h3>
-                            {s.lead && <p className="text-[1.2rem] font-semibold text-white leading-snug mb-5">{s.lead}</p>}
+                            {s.lead && <p className="text-[1.15rem] font-semibold italic text-white leading-snug mb-5">{s.lead}</p>}
                             <p className="text-[1.05rem] text-white leading-relaxed">{s.description}</p>
                             <ServiceSections sections={s.sections} />
                           </div>
@@ -201,7 +201,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
           >
             <div className="flex-1 min-w-0">
               <h3 className="text-[1.575rem] font-semibold text-white mb-4">{current.title}</h3>
-              {current.lead && <p className="text-[1.3rem] font-semibold text-white leading-snug mb-5">{current.lead}</p>}
+              {current.lead && <p className="text-[1.22rem] font-semibold italic text-white leading-snug mb-5">{current.lead}</p>}
               <p className="text-[1.05rem] text-white leading-relaxed">{current.description}</p>
               <ServiceSections sections={current.sections} />
             </div>
