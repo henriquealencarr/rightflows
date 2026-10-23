@@ -103,7 +103,8 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
           )}
           <ul className={`flex flex-col gap-2.5 ${SectionIcon ? "sm:pl-[3.75rem]" : ""}`}>
             {section.bullets.map((b) => (
-              <li key={b} className="flex gap-3 rounded-xl border border-white/8 bg-white/[0.04] px-4 py-3 text-[1.05rem] text-white leading-relaxed">
+              <li key={b} className="relative overflow-hidden flex gap-3 rounded-xl border border-white/8 bg-white/[0.04] px-4 py-3 text-[1.05rem] text-white leading-relaxed">
+                <span className="absolute bottom-0 left-0 h-0.5 w-12 bg-purple-400" aria-hidden />
                 <span className="mt-[0.6em] shrink-0 w-1.5 h-1.5 rounded-full bg-purple-400" />
                 <BulletText text={b} />
               </li>
