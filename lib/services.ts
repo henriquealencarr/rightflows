@@ -53,7 +53,7 @@ export const services: Service[] = [
           {
             intro: "Do lado do vendedor, os dados no CRM são enriquecidos automaticamente:",
             bullets: [
-              "Fit pronto: cargo, setor, tamanho da empresa e os critérios do seu nicho",
+              "Fit calculado: cargo, setor, tamanho da empresa e os critérios do seu nicho",
               "Histórico completo: tudo o que o lead respondeu, organizado numa nota só",
               "Funil em dia: a negociação muda de etapa sozinha, do primeiro contato à reunião marcada",
             ],
