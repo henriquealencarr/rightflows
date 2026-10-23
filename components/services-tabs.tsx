@@ -76,7 +76,7 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
   return (
     <>
       {sections.map((section, si) => (
-        <div key={si} className={`${si > 0 ? "mt-9" : "mt-5"} text-left`}>
+        <div key={si} className={`${si > 0 ? "mt-14" : "mt-5"} text-left`}>
           {section.intro && (
             <p className="text-[1.05rem] text-white leading-relaxed mb-4">{section.intro}</p>
           )}
