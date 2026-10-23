@@ -23,22 +23,6 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: "lead-generation",
-    icon: Target,
-    translations: {
-      en: {
-        title: "Lead Generation & Prospecting",
-        description:
-          "Automated pipelines that scrape data on potential leads and enrich that data at scale, delivering segmented lists ready for your team to prospect. An AI agent goes further: creates different personalized messages for each lead, with no need for your team to write anything from scratch.",
-      },
-      pt: {
-        title: "Geração e Prospecção de Leads",
-        description:
-          "Pipelines automatizados que raspam dados de potenciais leads e enriquecem esses dados em escala, entregando listas segmentadas prontas pro seu time prospectar. Um agente de IA vai além: Cria diferentes mensagens personalizadas pra cada lead, sem seu time precisar gerar algo do zero.",
-      },
-    },
-  },
-  {
     id: "whatsapp-agents",
     icon: MessageCircle,
     translations: {
@@ -51,6 +35,22 @@ export const services: Service[] = [
         title: "Agentes de IA em Chatbots",
         description:
           "Agentes de resposta rápida ou agentes SDR que recepcionam o lead, qualificam, passam informações do negócio, fazem agendamentos, anotam dados do cliente e reengajam com follow-ups no WhatsApp, Telegram ou qualquer canal de comunicação. Seu time monitora, a IA executa, 24/7, sem folga.",
+      },
+    },
+  },
+  {
+    id: "lead-generation",
+    icon: Target,
+    translations: {
+      en: {
+        title: "Lead Generation & Prospecting",
+        description:
+          "Automated pipelines that scrape data on potential leads and enrich that data at scale, delivering segmented lists ready for your team to prospect. An AI agent goes further: creates different personalized messages for each lead, with no need for your team to write anything from scratch.",
+      },
+      pt: {
+        title: "Geração e Prospecção de Leads",
+        description:
+          "Pipelines automatizados que raspam dados de potenciais leads e enriquecem esses dados em escala, entregando listas segmentadas prontas pro seu time prospectar. Um agente de IA vai além: Cria diferentes mensagens personalizadas pra cada lead, sem seu time precisar gerar algo do zero.",
       },
     },
   },
