@@ -18,7 +18,7 @@ export interface ServiceTranslation {
 }
 
 export interface ServiceSection {
-  icon?: "agent" | "seller";
+  label?: string;
   intro?: string;
   bullets: string[];
 }
@@ -44,7 +44,7 @@ export const services: Service[] = [
         lead: "Quem responde primeiro, vende mais. O agente responde em minutos e já sabe com quem está falando.",
         sections: [
           {
-            icon: "agent",
+            label: "Com o lead",
             intro:
               "O lead preenche o formulário e logo em seguida recebe um áudio personalizado de um agente de IA, no WhatsApp ou no canal que você preferir. Enquanto a conversa acontece, o agente:",
             bullets: [
@@ -55,7 +55,7 @@ export const services: Service[] = [
             ],
           },
           {
-            icon: "seller",
+            label: "No seu CRM",
             intro: "Do lado do vendedor, os dados no CRM são enriquecidos automaticamente:",
             bullets: [
               "Fit calculado: cargo, setor, tamanho da empresa e os critérios do seu nicho",

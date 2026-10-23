@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { Bot, UserRound } from "lucide-react";
 import {
   AnimatedMessageCircle,
   AnimatedFileSearch,
@@ -57,10 +56,9 @@ interface Service {
   title: string;
   lead?: string;
   description?: string;
-  sections?: { icon?: "agent" | "seller"; intro?: string; bullets: string[] }[];
+  sections?: { label?: string; intro?: string; bullets: string[] }[];
 }
 
-const sectionIconMap = { agent: Bot, seller: UserRound };
 
 // Bullets written as "Label: text" get the label in bold.
 function BulletText({ text }: { text: string }) {
@@ -79,32 +77,37 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
   return (
     <div className="flex flex-col gap-4 text-left">
       {sections.map((section, si) => {
-        const SectionIcon = section.icon ? sectionIconMap[section.icon] : null;
+        // Number the blocks only when there is more than one.
+        const numbered = sections.length > 1;
         return (
         <div
           key={si}
           className="rounded-2xl border border-white/8 p-6 sm:p-8"
           style={{ background: "rgba(255,255,255,0.04)" }}
         >
-          {(SectionIcon || section.intro) && (
-            <div className="flex items-start gap-4 mb-4">
-              {SectionIcon && (
-                <div
-                  className="shrink-0 w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center"
-                  style={{ background: "rgba(124,58,237,0.08)" }}
-                >
-                  <SectionIcon className="w-5 h-5 text-purple-400" strokeWidth={1.5} />
+          {(numbered || section.intro) && (
+            <div className="flex flex-col items-start gap-4 mb-4">
+              {numbered && (
+                <div className="flex items-center gap-4">
+                  <div
+                    className="shrink-0 w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-lg font-semibold text-purple-400"
+                    style={{ background: "rgba(124,58,237,0.08)" }}
+                  >
+                    {si + 1}
+                  </div>
+                  {section.label && (
+                    <h4 className="text-[1.25rem] font-semibold text-white">{section.label}</h4>
+                  )}
                 </div>
               )}
               {section.intro && (
-                <p className="text-[1.05rem] text-white leading-relaxed">{section.intro}</p>
+                <p className="text-[1.12rem] text-white leading-relaxed">{section.intro}</p>
               )}
             </div>
           )}
-          <ul className={`flex flex-col gap-2.5 ${SectionIcon ? "sm:pl-[3.75rem]" : ""}`}>
+          <ul className="flex flex-col gap-3">
             {section.bullets.map((b) => (
-              <li key={b} className="relative overflow-hidden flex gap-3 rounded-xl border border-white/8 bg-white/[0.04] px-4 py-3 text-[1.05rem] text-white leading-relaxed">
-                <span className="absolute bottom-0 left-0 h-0.5 w-full bg-purple-400" aria-hidden />
+              <li key={b} className="flex gap-3 text-[1.05rem] text-white leading-relaxed">
                 <span className="mt-[0.6em] shrink-0 w-1.5 h-1.5 rounded-full bg-purple-400" />
                 <BulletText text={b} />
               </li>
