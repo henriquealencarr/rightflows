@@ -49,7 +49,7 @@ export const services: Service[] = [
               "O lead preenche o formulário e logo em seguida recebe um áudio personalizado do agente, no WhatsApp ou no canal que você preferir. Enquanto a conversa acontece, o agente:",
             bullets: [
               "Pesquisa antes de falar: levanta dados do lead e da empresa na internet, e a primeira mensagem já chega com contexto",
-              "Qualificação automática: o Fit sai da pesquisa, antes da primeira mensagem. O agente só pergunta o que ficou faltando",
+              "Qualificação automática: o lead é avaliado antes da primeira mensagem. O agente só pergunta o que ficou faltando",
               "Agenda sem vai e volta: marca a reunião direto no calendário do próximo vendedor da fila",
               "Não deixa o lead esfriar: faz o follow-up sozinho quando ele para de responder",
             ],

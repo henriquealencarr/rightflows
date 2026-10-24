@@ -250,7 +250,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                 {current.lead && <p className="text-[1.15rem] italic text-white leading-snug mb-8">{current.lead}</p>}
                 {current.description && <p className="text-[1.05rem] text-white leading-relaxed mb-5">{current.description}</p>}
               </div>
-              <div className="shrink-0 -mt-8 w-36 h-36 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
+              <div className="shrink-0 -mt-8 mb-8 w-36 h-36 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(124,58,237,0.08)" }}>
                 <IconReveal icon={Icon} className="w-14 h-14 text-purple-400" strokeWidth={1} />
               </div>
             </div>
