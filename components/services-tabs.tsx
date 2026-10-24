@@ -71,11 +71,11 @@ function ServiceFooter({ service }: { service: Service }) {
       )}
       {service.cta && (
         <CalendlyButton
-          className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-lg font-medium text-lg text-white"
+          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-base text-white"
           style={{ background: "linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)" }}
         >
           {service.cta}
-          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path d="M7 17L17 7M17 7H7M17 7v10" />
           </svg>
         </CalendlyButton>
@@ -177,20 +177,26 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
 
   function handleAccordionClick(i: number) {
     const next = active === i ? -1 : i;
-    // When an item opens, glide the page so the item's top lands near the top of the
-    // screen. The target is re-measured every frame because the item that is closing
-    // above it keeps shrinking during the animation (a plain smooth scroll would aim at
-    // a stale position and leave the viewport on the next section).
+    // When an item opens, slide it on screen from where it was tapped to near the top,
+    // while it opens. Its position is re-measured every frame because the item closing
+    // above it keeps shrinking during the animation, so the scroll follows that collapse
+    // instead of aiming at a stale position (which left the viewport on the next section).
     const item = itemRefs.current[i];
     if (next !== -1 && item) {
-      const startY = window.scrollY;
+      const startTop = item.getBoundingClientRect().top;
+      const endTop = 16;
       const start = performance.now();
       const duration = 650;
       const step = () => {
         const t = Math.min(1, (performance.now() - start) / duration);
         const eased = 1 - Math.pow(1 - t, 3);
-        const target = item.getBoundingClientRect().top + window.scrollY - 16;
-        window.scrollTo(0, startY + (target - startY) * eased);
+        const wantedTop = startTop + (endTop - startTop) * eased;
+        // "instant": the global scroll-behavior: smooth would otherwise restart a smooth
+        // scroll on every frame, so the page would only move once the loop ends.
+        window.scrollTo({
+          top: window.scrollY + item.getBoundingClientRect().top - wantedTop,
+          behavior: "instant",
+        });
         if (t < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
@@ -207,13 +213,12 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
       className="grid grid-cols-1 lg:grid-cols-[418px_1fr] gap-6 lg:gap-2 items-stretch"
     >
         {/* Mobile: accordion */}
-        <motion.div layout className="flex lg:hidden flex-col gap-2">
+        <div className="flex lg:hidden flex-col gap-2">
           {services.map((s, i) => {
             const ItemIcon = iconMap[s.id] ?? AnimatedMessageCircle;
             const isActive = active === i;
             return (
-              <motion.div
-                layout
+              <div
                 key={s.id}
                 ref={(el) => { itemRefs.current[i] = el; }}
                 className="relative rounded-xl border border-white/25 overflow-hidden"
@@ -263,10 +268,10 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
 
         {/* Desktop: sidebar + panel */}
         <nav className="hidden lg:flex flex-col border-l border-white/10">
