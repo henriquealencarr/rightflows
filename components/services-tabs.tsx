@@ -56,7 +56,7 @@ interface Service {
   title: string;
   lead?: string;
   description?: string;
-  sections?: { label?: string; intro?: string; bullets: string[] }[];
+  sections?: { label?: string; intro?: string; bullets?: string[] }[];
 }
 
 
@@ -82,6 +82,7 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
       {sections.map((section, si) => {
         // Number the blocks only when there is more than one.
         const numbered = sections.length > 1;
+        const hasBullets = !!section.bullets?.length;
         return (
         <div
           key={si}
@@ -89,7 +90,7 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
           style={{ background: "rgba(255,255,255,0.04)" }}
         >
           {(numbered || section.intro) && (
-            <div className="flex flex-col items-start gap-4 mb-4">
+            <div className={`flex flex-col items-start gap-4 ${hasBullets ? "mb-4" : ""}`}>
               {numbered && (
                 <div className="flex items-center gap-4">
                   <div
@@ -108,8 +109,9 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
               )}
             </div>
           )}
+          {hasBullets && (
           <ul className="flex flex-col gap-3">
-            {section.bullets.map((b, bi) => (
+            {section.bullets!.map((b, bi) => (
               <motion.li
                 key={b}
                 initial={{ opacity: 0, x: -16 }}
@@ -123,6 +125,7 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
               </motion.li>
             ))}
           </ul>
+          )}
         </div>
         );
       })}

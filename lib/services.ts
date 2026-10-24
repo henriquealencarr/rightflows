@@ -20,7 +20,7 @@ export interface ServiceTranslation {
 export interface ServiceSection {
   label?: string;
   intro?: string;
-  bullets: string[];
+  bullets?: string[];
 }
 
 export interface Service {
@@ -49,7 +49,7 @@ export const services: Service[] = [
               "O lead preenche o formulário e logo em seguida recebe um áudio personalizado do agente, no WhatsApp ou no canal que você preferir. Enquanto a conversa acontece, o agente:",
             bullets: [
               "Pesquisa antes de falar: levanta dados do lead e da empresa na internet, e a primeira mensagem já chega com contexto",
-              "Qualifica sem interrogatório: pergunta só o que a pesquisa não encontrou",
+              "Qualificação automática: o Fit sai da pesquisa, antes da primeira mensagem. O agente só pergunta o que ficou faltando",
               "Agenda sem vai e volta: marca a reunião direto no calendário do próximo vendedor da fila",
               "Não deixa o lead esfriar: faz o follow-up sozinho quando ele para de responder",
             ],
@@ -78,8 +78,19 @@ export const services: Service[] = [
       },
       pt: {
         title: "Geração e Prospecção de Leads",
-        description:
-          "Pipelines automatizados que raspam dados de potenciais leads e enriquecem esses dados em escala, entregando listas segmentadas prontas pro seu time prospectar. Um agente de IA vai além: Cria diferentes mensagens personalizadas pra cada lead, sem seu time precisar gerar algo do zero.",
+        lead: "Não espere o cliente ideal te encontrar. Vá até ele com a mensagem certa.",
+        sections: [
+          {
+            label: "Do perfil ao envio",
+            intro:
+              "Encontramos os decisores com o perfil do seu cliente ideal e entregamos a lista limpa no seu CRM, com contato completo e uma mensagem para cada um. Você aprova e nós disparamos, ou sua equipe envia.",
+          },
+          {
+            label: "Prefere rodar internamente?",
+            intro:
+              "No plug and play, instalamos no seu ambiente um sistema que gera as listas e as mensagens prontas. Seu time usa quando quiser, sem depender da gente.",
+          },
+        ],
       },
     },
   },
