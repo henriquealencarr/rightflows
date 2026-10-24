@@ -8,8 +8,11 @@ import {
   AnimatedFileSearch,
   AnimatedTarget,
   AnimatedMessagesSquare,
+  AnimatedShoppingCart,
+  AnimatedRefreshCw,
   type AnimatedIconProps,
 } from "@/components/animated-service-icons";
+import { CalendlyButton } from "@/components/calendly-button";
 
 function IconReveal({
   icon: Icon,
@@ -44,6 +47,8 @@ const iconMap: Record<string, (props: AnimatedIconProps) => React.JSX.Element> =
   "document-assistants": AnimatedFileSearch,
   "lead-generation": AnimatedTarget,
   "meeting-assistants": AnimatedMessagesSquare,
+  ecommerce: AnimatedShoppingCart,
+  "base-reactivation": AnimatedRefreshCw,
 };
 
 interface Service {
@@ -52,6 +57,31 @@ interface Service {
   lead?: string;
   description?: string;
   sections?: { label?: string; icon?: SectionIconKey; intro?: string; bullets?: string[] }[];
+  closing?: string;
+  cta?: string;
+}
+
+// Optional closing line and diagnosis CTA shown under a service's blocks.
+function ServiceFooter({ service }: { service: Service }) {
+  if (!service.closing && !service.cta) return null;
+  return (
+    <div className="mt-8 flex flex-col items-center lg:items-start gap-5">
+      {service.closing && (
+        <p className="text-[1.05rem] text-white/80 leading-relaxed">{service.closing}</p>
+      )}
+      {service.cta && (
+        <CalendlyButton
+          className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-lg font-medium text-lg text-white"
+          style={{ background: "linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)" }}
+        >
+          {service.cta}
+          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </CalendlyButton>
+      )}
+    </div>
+  );
 }
 
 // Sections can show an icon in place of their number.
@@ -221,6 +251,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                             {s.lead && <p className="text-[1.1rem] italic text-white leading-snug mb-8">{s.lead}</p>}
                             {s.description && <p className="text-[1.05rem] text-white leading-relaxed mb-5">{s.description}</p>}
                             <ServiceSections sections={s.sections} />
+                            <ServiceFooter service={s} />
                           </div>
                         </div>
                       </motion.div>
@@ -277,6 +308,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
             </div>
             {/* Sections span the full panel width, below the title row and icon. */}
             <ServiceSections sections={current.sections} />
+            <ServiceFooter service={current} />
           </motion.div>
           )}
         </AnimatePresence>

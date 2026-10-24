@@ -50,6 +50,20 @@ export function AnimatedPhone({ strokeWidth = 1.75, style, ...props }: AnimatedI
   );
 }
 
+export function AnimatedShoppingCart({ strokeWidth = 1.75, style, ...props }: AnimatedIconProps) {
+  return (
+    <svg {...base} strokeWidth={strokeWidth} style={style} {...props}>
+      <path
+        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+        pathLength="1"
+        style={{ strokeDasharray: "1 1", animation: "mc-draw 0.6s ease-out 0.05s both" }}
+      />
+      <circle cx="8" cy="21" r="1" style={{ transformOrigin: "8px 21px", animation: "tg-in 0.4s cubic-bezier(.2,.9,.3,1) 0.55s both" }} />
+      <circle cx="19" cy="21" r="1" style={{ transformOrigin: "19px 21px", animation: "tg-in 0.4s cubic-bezier(.2,.9,.3,1) 0.7s both" }} />
+    </svg>
+  );
+}
+
 export function AnimatedTarget({ strokeWidth = 1.75, style, ...props }: AnimatedIconProps) {
   return (
     <svg {...base} strokeWidth={strokeWidth} style={style} {...props}>

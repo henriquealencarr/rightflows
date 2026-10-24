@@ -4,6 +4,8 @@ import {
   FileSearch,
   Target,
   MessagesSquare,
+  ShoppingCart,
+  RefreshCw,
   type LucideIcon,
 } from "lucide-react";
 
@@ -12,6 +14,8 @@ export interface ServiceTranslation {
   lead?: string;
   description?: string;
   sections?: ServiceSection[];
+  closing?: string;
+  cta?: string;
 }
 
 export interface ServiceSection {
@@ -123,6 +127,88 @@ export const services: Service[] = [
               "Assistentes que consultam os documentos da sua empresa e as fontes que você definir, e respondem na hora as dúvidas de clientes ou do próprio time, com a informação certa. Funcionam no SAC ou no suporte interno.",
           },
         ],
+      },
+    },
+  },
+  {
+    id: "ecommerce",
+    icon: ShoppingCart,
+    translations: {
+      en: {
+        title: "E-commerce Automation",
+        lead: "The sale left in the cart comes back through WhatsApp.",
+        sections: [
+          {
+            label: "Recovers sales",
+            intro:
+              "When a customer abandons the cart or doesn't pay the Pix or boleto, the agent sends a personalized WhatsApp message with the product and the payment link. If they don't come back, the agent follows up on its own.",
+          },
+          {
+            label: "Supports and builds loyalty",
+            intro:
+              "The agent instantly answers \"where's my order?\" by checking the store and the carrier. After delivery, it asks for a review and lets the customer know when it's time to buy again.",
+          },
+        ],
+        closing: "Connects to your store's platform.",
+        cta: "I want a free diagnosis",
+      },
+      pt: {
+        title: "Automação para E-commerce",
+        lead: "A venda que ficou no carrinho volta pelo WhatsApp.",
+        sections: [
+          {
+            label: "Recupera vendas",
+            intro:
+              "Quando o cliente abandona o carrinho ou não paga o Pix ou o boleto, o agente manda uma mensagem personalizada no WhatsApp com o produto e o link de pagamento. Se ele não voltar, o agente faz o follow-up sozinho.",
+          },
+          {
+            label: "Atende e fideliza",
+            intro:
+              "O agente responde na hora o \"cadê meu pedido?\", consultando a loja e a transportadora. Depois da entrega, pede a avaliação e avisa o cliente quando for hora de comprar de novo.",
+          },
+        ],
+        closing: "Conecta com a plataforma da sua loja.",
+        cta: "Quero um diagnóstico gratuito",
+      },
+    },
+  },
+  {
+    id: "base-reactivation",
+    icon: RefreshCw,
+    translations: {
+      en: {
+        title: "Database Reactivation",
+        lead: "Your CRM is full of forgotten sales.",
+        sections: [
+          {
+            label: "Revives dormant contacts",
+            intro:
+              "The agent goes through your base of old leads and inactive customers, updates data that has changed, like job title and company, and separates who still fits your ideal customer profile.",
+          },
+          {
+            label: "Restarts the conversation",
+            intro:
+              "Each contact gets a personalized message on WhatsApp or by email, based on their history. Whoever replies is qualified by the agent and leaves with a meeting booked with the next rep in line.",
+          },
+        ],
+        cta: "I want a free diagnosis",
+      },
+      pt: {
+        title: "Reativação de Base",
+        lead: "Seu CRM está cheio de venda esquecida.",
+        sections: [
+          {
+            label: "Revive os contatos parados",
+            intro:
+              "O agente percorre sua base de leads antigos e clientes inativos, atualiza os dados que mudaram, como cargo e empresa, e separa quem ainda tem o perfil do seu cliente ideal.",
+          },
+          {
+            label: "Retoma a conversa",
+            intro:
+              "Cada contato recebe uma mensagem personalizada no WhatsApp ou por e-mail, com base no histórico dele. Quem responde é qualificado pelo agente e já sai com a reunião marcada com o próximo vendedor da fila.",
+          },
+        ],
+        cta: "Quero um diagnóstico gratuito",
       },
     },
   },
