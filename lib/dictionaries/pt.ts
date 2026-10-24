@@ -54,7 +54,7 @@ export const pt: Dictionary = {
   },
   services: {
     eyebrow: "O Que Fazemos",
-    heading: "Como a IA aumenta o ROI da sua operação comercial.",
+    heading: "Os principais casos de uso em automações comerciais.",
     subhead:
       "Auditamos processos que tomam tempo da sua equipe e desenhamos automações decisivas para o seu resultado.",
   },

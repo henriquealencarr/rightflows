@@ -120,12 +120,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       {/* Services */}
-      <section id="services" className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] py-4 sm:py-40">
+      <section id="services" className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] pt-40 pb-4 sm:py-40">
         <div className="mb-10 sm:mb-16 max-w-2xl lg:max-w-3xl text-center lg:text-left">
           <AnimateIn delay={0}>
             <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.services.eyebrow}</p>
           </AnimateIn>
-          <AnimateInH2 delay={0.1} className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.62rem] font-bold leading-tight">{dict.services.heading}</AnimateInH2>
+          <AnimateInH2 delay={0.1} className="text-[1.5rem] sm:text-[2.1rem] lg:text-[2.62rem] font-bold leading-tight">{dict.services.heading}</AnimateInH2>
         </div>
         <AnimateIn delay={0.15}>
           <ServicesTabs

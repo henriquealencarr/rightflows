@@ -93,6 +93,46 @@ export const services: Service[] = [
     },
   },
   {
+    id: "base-reactivation",
+    icon: RefreshCw,
+    translations: {
+      en: {
+        title: "Database Reactivation",
+        lead: "Your CRM is full of forgotten sales.",
+        sections: [
+          {
+            label: "Revives dormant contacts",
+            intro:
+              "The agent goes through your base of old leads and inactive customers, updates data that has changed, like job title and company, and separates who still fits your ideal customer profile.",
+          },
+          {
+            label: "Restarts the conversation",
+            intro:
+              "Each contact gets a personalized message on WhatsApp or by email, based on their history. Whoever replies is qualified by the agent and leaves with a meeting booked with the next rep in line.",
+          },
+        ],
+        cta: "I want a free diagnosis",
+      },
+      pt: {
+        title: "Reativação de Base",
+        lead: "Seu CRM está cheio de venda esquecida.",
+        sections: [
+          {
+            label: "Revive os contatos parados",
+            intro:
+              "O agente busca leads antigos e clientes inativos onde estiverem, seja no CRM, em planilhas ou em sistemas antigos, organiza os dados e monta uma base limpa, pronta para retomar o contato.",
+          },
+          {
+            label: "Retoma a conversa",
+            intro:
+              "Cada contato recebe uma mensagem personalizada no WhatsApp ou por e-mail, com base no histórico dele. Quem responde é qualificado pelo agente e já sai com a reunião marcada com o próximo vendedor da fila.",
+          },
+        ],
+        cta: "Quero um diagnóstico gratuito",
+      },
+    },
+  },
+  {
     id: "meeting-assistants",
     icon: MessagesSquare,
     translations: {
@@ -174,46 +214,6 @@ export const services: Service[] = [
               "Produto novo: a planilha do fornecedor vira página pronta, com título, descrição e SEO",
               "Caso que precisa de gente: o agente passa a conversa para um atendente da loja, com todo o histórico",
             ],
-          },
-        ],
-        cta: "Quero um diagnóstico gratuito",
-      },
-    },
-  },
-  {
-    id: "base-reactivation",
-    icon: RefreshCw,
-    translations: {
-      en: {
-        title: "Database Reactivation",
-        lead: "Your CRM is full of forgotten sales.",
-        sections: [
-          {
-            label: "Revives dormant contacts",
-            intro:
-              "The agent goes through your base of old leads and inactive customers, updates data that has changed, like job title and company, and separates who still fits your ideal customer profile.",
-          },
-          {
-            label: "Restarts the conversation",
-            intro:
-              "Each contact gets a personalized message on WhatsApp or by email, based on their history. Whoever replies is qualified by the agent and leaves with a meeting booked with the next rep in line.",
-          },
-        ],
-        cta: "I want a free diagnosis",
-      },
-      pt: {
-        title: "Reativação de Base",
-        lead: "Seu CRM está cheio de venda esquecida.",
-        sections: [
-          {
-            label: "Revive os contatos parados",
-            intro:
-              "O agente busca leads antigos e clientes inativos onde estiverem, seja no CRM, em planilhas ou em sistemas antigos, organiza os dados e monta uma base limpa, pronta para retomar o contato.",
-          },
-          {
-            label: "Retoma a conversa",
-            intro:
-              "Cada contato recebe uma mensagem personalizada no WhatsApp ou por e-mail, com base no histórico dele. Quem responde é qualificado pelo agente e já sai com a reunião marcada com o próximo vendedor da fila.",
           },
         ],
         cta: "Quero um diagnóstico gratuito",
