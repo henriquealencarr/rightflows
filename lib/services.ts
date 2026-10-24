@@ -38,11 +38,13 @@ export const services: Service[] = [
     translations: {
       en: {
         title: "AI Agents in Chatbots",
+        cta: "I want a free diagnosis",
         description:
           "Speed-to-lead or SDR agents that welcome the lead, qualify, share business information, book appointments, log customer data, and re-engage with follow-ups on WhatsApp, Telegram, or any communication channel. Your team monitors, the AI executes, 24/7, no days off.",
       },
       pt: {
         title: "Qualificação e Atendimento",
+        cta: "Quero um diagnóstico gratuito",
         lead: "Quem responde primeiro, vende mais. Nosso agente de IA pesquisa, qualifica e inicia uma conversa com o lead em menos de 1 minuto.",
         sections: [
           {
@@ -65,11 +67,13 @@ export const services: Service[] = [
     translations: {
       en: {
         title: "Lead Generation & Prospecting",
+        cta: "I want a free diagnosis",
         description:
           "Automated pipelines that scrape data on potential leads and enrich that data at scale, delivering segmented lists ready for your team to prospect. An AI agent goes further: creates different personalized messages for each lead, with no need for your team to write anything from scratch.",
       },
       pt: {
         title: "Geração e Prospecção de Leads",
+        cta: "Quero um diagnóstico gratuito",
         lead: "Não espere o cliente ideal te encontrar. Vá até ele com a mensagem certa.",
         sections: [
           {
@@ -94,11 +98,13 @@ export const services: Service[] = [
     translations: {
       en: {
         title: "Meeting Assistants",
+        cta: "I want a free diagnosis",
         description:
           "Agents that analyze your sales meetings and automatically evaluate team performance. They log meeting data straight into the CRM, keeping the lead's history up to date. And they generate a ready-to-send proposal based on what was discussed.",
       },
       pt: {
         title: "Assistentes de Reunião",
+        cta: "Quero um diagnóstico gratuito",
         lead: "Saiba como seu time vende sem precisar assistir a cada call.",
         sections: [
           {
@@ -115,11 +121,13 @@ export const services: Service[] = [
     translations: {
       en: {
         title: "Support Assistants",
+        cta: "I want a free diagnosis",
         description:
           "Assistants that read your internal documents and external information using RAG (Retrieval-Augmented Generation) technology and answer any question on the spot, with the right context. Ideal for customer support or internal helpdesk teams.",
       },
       pt: {
         title: "Assistentes de Suporte",
+        cta: "Quero um diagnóstico gratuito",
         lead: "Seu time para de responder a mesma pergunta todo dia.",
         sections: [
           {
@@ -146,10 +154,9 @@ export const services: Service[] = [
           {
             label: "Supports and builds loyalty",
             intro:
-              "The agent instantly answers \"where's my order?\" by checking the store and the carrier. After delivery, it asks for a review and lets the customer know when it's time to buy again.",
+              "The agent instantly answers \"where's my order?\" by checking the store and the carrier. After delivery, it asks for a review and lets the customer know when it's time to buy again. Connects to your store's platform.",
           },
         ],
-        closing: "Connects to your store's platform.",
         cta: "I want a free diagnosis",
       },
       pt: {
@@ -164,10 +171,9 @@ export const services: Service[] = [
           {
             label: "Atende e fideliza",
             intro:
-              "O agente responde na hora o \"cadê meu pedido?\", consultando a loja e a transportadora. Depois da entrega, pede a avaliação e avisa o cliente quando for hora de comprar de novo.",
+              "O agente responde na hora o \"cadê meu pedido?\", consultando a loja e a transportadora. Depois da entrega, pede a avaliação e avisa o cliente quando for hora de comprar de novo. Conecta com a plataforma da sua loja.",
           },
         ],
-        closing: "Conecta com a plataforma da sua loja.",
         cta: "Quero um diagnóstico gratuito",
       },
     },

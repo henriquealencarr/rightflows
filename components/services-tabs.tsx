@@ -177,18 +177,23 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
 
   function handleAccordionClick(i: number) {
     const next = active === i ? -1 : i;
-    // Opening an item below the open one collapses the content above it, which would
-    // otherwise shift the page up and leave the viewport further down (e.g. on the next
-    // section). Keep the tapped item pinned at its on-screen position while it collapses.
+    // When an item opens, glide the page so the item's top lands near the top of the
+    // screen. The target is re-measured every frame because the item that is closing
+    // above it keeps shrinking during the animation (a plain smooth scroll would aim at
+    // a stale position and leave the viewport on the next section).
     const item = itemRefs.current[i];
-    if (next !== -1 && active !== -1 && active < i && item) {
-      const pinnedTop = item.getBoundingClientRect().top;
+    if (next !== -1 && item) {
+      const startY = window.scrollY;
       const start = performance.now();
-      const pin = () => {
-        window.scrollBy(0, item.getBoundingClientRect().top - pinnedTop);
-        if (performance.now() - start < 800) requestAnimationFrame(pin);
+      const duration = 650;
+      const step = () => {
+        const t = Math.min(1, (performance.now() - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const target = item.getBoundingClientRect().top + window.scrollY - 16;
+        window.scrollTo(0, startY + (target - startY) * eased);
+        if (t < 1) requestAnimationFrame(step);
       };
-      requestAnimationFrame(pin);
+      requestAnimationFrame(step);
     }
     setActive(next);
   }
@@ -211,7 +216,7 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
                 layout
                 key={s.id}
                 ref={(el) => { itemRefs.current[i] = el; }}
-                className="relative rounded-xl border border-white/10 overflow-hidden"
+                className="relative rounded-xl border border-white/25 overflow-hidden"
               >
                 <div className={`absolute bottom-0 left-0 h-0.5 w-full bg-purple-400 transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0"}`} />
                 <button
