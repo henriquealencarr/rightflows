@@ -6,10 +6,7 @@ import { PlugZap, Send } from "lucide-react";
 import {
   AnimatedMessageCircle,
   AnimatedFileSearch,
-  AnimatedPhone,
   AnimatedTarget,
-  AnimatedListChecks,
-  AnimatedRefreshCw,
   AnimatedMessagesSquare,
   type AnimatedIconProps,
 } from "@/components/animated-service-icons";
@@ -45,10 +42,7 @@ function IconReveal({
 const iconMap: Record<string, (props: AnimatedIconProps) => React.JSX.Element> = {
   "whatsapp-agents": AnimatedMessageCircle,
   "document-assistants": AnimatedFileSearch,
-  "voice-ai": AnimatedPhone,
   "lead-generation": AnimatedTarget,
-  "qualification-systems": AnimatedListChecks,
-  "sdr-crm": AnimatedRefreshCw,
   "meeting-assistants": AnimatedMessagesSquare,
 };
 

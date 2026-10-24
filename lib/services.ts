@@ -2,10 +2,7 @@ import type { Locale } from "@/lib/i18n";
 import {
   MessageCircle,
   FileSearch,
-  Phone,
   Target,
-  ListChecks,
-  RefreshCw,
   MessagesSquare,
   type LucideIcon,
 } from "lucide-react";
@@ -88,38 +85,6 @@ export const services: Service[] = [
     },
   },
   {
-    id: "sdr-crm",
-    icon: RefreshCw,
-    translations: {
-      en: {
-        title: "CRM Automation",
-        description:
-          "Your dashboard 100% automated without you having to press a single button. AI agents that fill in the dashboard fields, move tasks across the kanban with no one lifting a finger, generate weekly reports, and sync every interaction in real time. Your pipeline always up to date, without your team touching a single row.",
-      },
-      pt: {
-        title: "Automação de CRM",
-        description:
-          "Seu Dashboard 100% automatizado sem você precisar apertar um único botão. Agentes de IA que preenchem os campos do dashboard, movem tarefas no kanban sem depender de ninguém, geram relatórios semanais e sincronizam cada interação em tempo real. Seu pipeline sempre atualizado, sem seu time precisar tocar em uma linha.",
-      },
-    },
-  },
-  {
-    id: "qualification-systems",
-    icon: ListChecks,
-    translations: {
-      en: {
-        title: "Qualification Systems",
-        description:
-          "AI-driven qualification flows that assess a lead's FIT: company size, industry, the person's role, whether they use the right tools, whether they likely have budget. An objective analysis of how well this lead matches your ICP, the ideal customer profile, that plugs into any sales flow you already have. Ideal for outbound.",
-      },
-      pt: {
-        title: "Sistemas de Qualificação",
-        description:
-          "Fluxos de qualificação com IA que avaliam o FIT do lead: tamanho da empresa, setor, cargo da pessoa, se usa as ferramentas certas, se tem orçamento provável. Uma análise objetiva de quanto esse lead se encaixa no seu ICP, o perfil de cliente ideal, e que se integra a qualquer fluxo comercial que você já tenha. Ideal para outbound.",
-      },
-    },
-  },
-  {
     id: "meeting-assistants",
     icon: MessagesSquare,
     translations: {
@@ -151,24 +116,13 @@ export const services: Service[] = [
       },
       pt: {
         title: "Assistentes de Suporte",
-        description:
-          "Assistentes que leem seus documentos internos e informações externas usando tecnologia de RAG (Retrieval-Augmented Generation) e respondem qualquer pergunta na hora, com o contexto certo. Ideal para SAC ou Suporte interno da empresa.",
-      },
-    },
-  },
-  {
-    id: "voice-ai",
-    icon: Phone,
-    translations: {
-      en: {
-        title: "AI Voice Agents",
-        description:
-          "Outbound and inbound voice agents that hold real conversations, check availability, and book appointments during the call itself. Your company calls first or receives the call. The agent runs the conversation the same way either way.",
-      },
-      pt: {
-        title: "Agentes de IA de Voz",
-        description:
-          "Agentes de voz outbound e inbound que conduzem conversas reais, verificam disponibilidade e agendam compromissos durante a própria ligação. Sua empresa liga primeiro ou recebe a chamada. O agente conduz a conversa do mesmo jeito.",
+        lead: "Seu time para de responder a mesma pergunta todo dia.",
+        sections: [
+          {
+            intro:
+              "Assistentes que consultam os documentos da sua empresa e as fontes que você definir, e respondem na hora as dúvidas de clientes ou do próprio time, com a informação certa. Funcionam no SAC ou no suporte interno.",
+          },
+        ],
       },
     },
   },
