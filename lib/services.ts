@@ -47,22 +47,12 @@ export const services: Service[] = [
           {
             label: "Com o lead",
             intro:
-              "O lead preenche o formulário e logo em seguida recebe um áudio personalizado do agente, no WhatsApp ou no canal que você preferir. Enquanto a conversa acontece, o agente:",
-            bullets: [
-              "Pesquisa antes de falar: levanta dados do lead e da empresa na internet, e a primeira mensagem já chega com contexto",
-              "Qualificação automática: o lead é avaliado antes da primeira mensagem. O agente só pergunta o que ficou faltando",
-              "Agenda sem vai e volta: marca a reunião direto no calendário do próximo vendedor da fila",
-              "Não deixa o lead esfriar: faz o follow-up sozinho quando ele para de responder",
-            ],
+              "Antes da primeira mensagem, o agente já pesquisou o lead e avaliou se o perfil dele tem Fit com o seu negócio. Depois manda um áudio personalizado no WhatsApp ou no canal que você preferir, pergunta só o que falta para qualificar, marca a reunião com o próximo vendedor da fila e faz o follow-up sozinho se o lead sumir.",
           },
           {
             label: "No seu CRM",
-            intro: "Do lado do vendedor, os dados no CRM são enriquecidos automaticamente:",
-            bullets: [
-              "Fit calculado: cargo, setor, tamanho da empresa e os critérios do seu nicho",
-              "Histórico completo: tudo o que o lead respondeu, organizado numa nota só",
-              "Funil em dia: a negociação muda de etapa sozinha, do primeiro contato à reunião marcada",
-            ],
+            intro:
+              "O vendedor recebe o lead com o Fit calculado (cargo, setor, tamanho da empresa e os critérios do seu nicho) e tudo o que ele respondeu organizado numa nota só. A negociação avança de etapa no funil automaticamente, do primeiro contato à reunião marcada.",
           },
         ],
       },
