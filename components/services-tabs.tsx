@@ -149,8 +149,24 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
   const current = services[active] ?? services[0];
   const Icon = iconMap[current?.id] ?? AnimatedMessageCircle;
 
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
   function handleAccordionClick(i: number) {
-    setActive(active === i ? -1 : i);
+    const next = active === i ? -1 : i;
+    // Opening an item below the open one collapses the content above it, which would
+    // otherwise shift the page up and leave the viewport further down (e.g. on the next
+    // section). Keep the tapped item pinned at its on-screen position while it collapses.
+    const item = itemRefs.current[i];
+    if (next !== -1 && active !== -1 && active < i && item) {
+      const pinnedTop = item.getBoundingClientRect().top;
+      const start = performance.now();
+      const pin = () => {
+        window.scrollBy(0, item.getBoundingClientRect().top - pinnedTop);
+        if (performance.now() - start < 800) requestAnimationFrame(pin);
+      };
+      requestAnimationFrame(pin);
+    }
+    setActive(next);
   }
 
   return (
@@ -167,7 +183,12 @@ export function ServicesTabs({ services }: ServicesTabsProps) {
             const ItemIcon = iconMap[s.id] ?? AnimatedMessageCircle;
             const isActive = active === i;
             return (
-              <motion.div layout key={s.id} className="relative rounded-xl border border-white/10 overflow-hidden">
+              <motion.div
+                layout
+                key={s.id}
+                ref={(el) => { itemRefs.current[i] = el; }}
+                className="relative rounded-xl border border-white/10 overflow-hidden"
+              >
                 <div className={`absolute bottom-0 left-0 h-0.5 w-full bg-purple-400 transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0"}`} />
                 <button
                   onClick={() => handleAccordionClick(i)}
