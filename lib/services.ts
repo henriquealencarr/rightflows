@@ -144,34 +144,36 @@ export const services: Service[] = [
     translations: {
       en: {
         title: "E-commerce Automation",
-        lead: "The sale left in the cart comes back through WhatsApp.",
+        lead: "From cart to delivery, your store running with no one at the keyboard.",
         sections: [
           {
-            label: "Recovers sales",
-            intro:
-              "When a customer abandons the cart or doesn't pay the Pix or boleto, the agent sends a personalized WhatsApp message with the product and the payment link. If they don't come back, the agent follows up on its own.",
-          },
-          {
-            label: "Supports and builds loyalty",
-            intro:
-              "The agent instantly answers \"where's my order?\" by checking the store and the carrier. After delivery, it asks for a review and lets the customer know when it's time to buy again. Connects to your store's platform.",
+            intro: "A few examples of what can be automated:",
+            bullets: [
+              "Abandoned cart: the customer leaves without paying and gets the product and a link to finish on WhatsApp",
+              "Forgotten Pix or boleto: before it's due, a reminder arrives with the payment ready",
+              "\"Where's my order?\": the agent answers instantly with the status and tracking",
+              "Paid order: shipping label, ERP and customer notice happen on their own",
+              "New product: the supplier's spreadsheet becomes a ready page, with title, description and SEO",
+              "Trickier case: the agent hands the conversation over to someone on the store's team",
+            ],
           },
         ],
         cta: "I want a free diagnosis",
       },
       pt: {
         title: "Automação para E-commerce",
-        lead: "A venda que ficou no carrinho volta pelo WhatsApp.",
+        lead: "Do carrinho à entrega, sua loja funcionando sem ninguém no teclado.",
         sections: [
           {
-            label: "Recupera vendas",
-            intro:
-              "Quando o cliente abandona o carrinho ou não paga o Pix ou o boleto, o agente manda uma mensagem personalizada no WhatsApp com o produto e o link de pagamento. Se ele não voltar, o agente faz o follow-up sozinho.",
-          },
-          {
-            label: "Atende e fideliza",
-            intro:
-              "O agente responde na hora o \"cadê meu pedido?\", consultando a loja e a transportadora. Depois da entrega, pede a avaliação e avisa o cliente quando for hora de comprar de novo. Conecta com a plataforma da sua loja.",
+            intro: "Alguns exemplos do que dá para automatizar:",
+            bullets: [
+              "Carrinho abandonado: o cliente sai sem pagar e recebe no WhatsApp o produto e o link para finalizar",
+              "Pix ou boleto esquecido: antes de vencer, chega um lembrete com o pagamento pronto",
+              "\"Cadê meu pedido?\": o agente responde na hora com o status e o rastreio",
+              "Pedido pago: a etiqueta de envio é gerada, o pedido entra no seu sistema de gestão e o cliente recebe o código de rastreio, sem ninguém mexer",
+              "Produto novo: a planilha do fornecedor vira página pronta, com título, descrição e SEO",
+              "Caso que precisa de gente: o agente passa a conversa para um atendente da loja, com todo o histórico",
+            ],
           },
         ],
         cta: "Quero um diagnóstico gratuito",
@@ -206,7 +208,7 @@ export const services: Service[] = [
           {
             label: "Revive os contatos parados",
             intro:
-              "O agente percorre sua base de leads antigos e clientes inativos, atualiza os dados que mudaram, como cargo e empresa, e separa quem ainda tem o perfil do seu cliente ideal.",
+              "O agente busca leads antigos e clientes inativos onde estiverem, seja no CRM, em planilhas ou em sistemas antigos, organiza os dados e monta uma base limpa, pronta para retomar o contato.",
           },
           {
             label: "Retoma a conversa",
