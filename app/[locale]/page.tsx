@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Users, BarChart2, Zap } from "lucide-react";
+import { Users, BarChart2, CalendarX, Database, Headphones, ShoppingCart } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { getCases } from "@/lib/cases";
@@ -125,7 +125,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <AnimateIn delay={0}>
             <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.services.eyebrow}</p>
           </AnimateIn>
-          <AnimateInH2 delay={0.1} className="text-[1.5rem] sm:text-[2.1rem] lg:text-[2.62rem] font-bold leading-tight">{dict.services.heading}</AnimateInH2>
+          <AnimateInH2 delay={0.1} className="text-[1.5rem] sm:text-[2.1rem] lg:text-[2.36rem] font-bold leading-tight">{dict.services.heading}</AnimateInH2>
         </div>
         <AnimateIn delay={0.15}>
           <ServicesTabs
@@ -149,12 +149,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <section className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-[6vw] pt-32 pb-20 sm:py-40">
         <AnimateIn className="mb-10 sm:mb-16 max-w-3xl text-center lg:text-left">
           <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.scenario.eyebrow}</p>
-          <AnimateInH2 className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.85rem] font-bold leading-tight">{dict.scenario.heading}</AnimateInH2>
+          <AnimateInH2 className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.36rem] font-bold leading-tight">{dict.scenario.heading}</AnimateInH2>
         </AnimateIn>
 
         <AnimateInStagger className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {dict.scenario.cards.map((card, i) => {
-            const Icon = [Users, BarChart2, Zap][i];
+            const Icon = [Users, BarChart2, CalendarX, Database, Headphones, ShoppingCart][i] ?? Users;
             return (
               <AnimateInCard key={card.title}>
                 <div className="glass-card rounded-2xl p-6 sm:p-8 h-full flex flex-col gap-4 text-center lg:text-left items-center lg:items-start">
@@ -195,7 +195,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <AnimateIn delay={0}>
               <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-3 sm:mb-4">{dict.about.eyebrow}</p>
             </AnimateIn>
-            <AnimateInH2 delay={0.1} className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.85rem] font-bold leading-tight mb-8 sm:mb-8">
+            <AnimateInH2 delay={0.1} className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.36rem] font-bold leading-tight mb-8 sm:mb-8">
               {dict.about.heading}
             </AnimateInH2>
             <AnimateIn delay={0.2}>
@@ -218,7 +218,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <AnimateIn>
           <div className="glass-card rounded-2xl pt-[4.4rem] sm:pt-[6.6rem] lg:pt-[8.8rem] px-8 sm:px-16 lg:px-24 pb-0 text-center glow-purple">
             <p className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-4 sm:mb-6">{dict.contact.eyebrow}</p>
-            <AnimateInH2 className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.85rem] font-bold leading-tight mb-6 sm:mb-6">
+            <AnimateInH2 className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.36rem] font-bold leading-tight mb-6 sm:mb-6">
               {dict.contact.heading}{" "}
               <span className="gradient-text">{dict.contact.headingHighlight}</span>
             </AnimateInH2>

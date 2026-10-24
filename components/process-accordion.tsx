@@ -35,7 +35,7 @@ export function ProcessAccordion({ steps, heading, eyebrow }: ProcessAccordionPr
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: false, margin: "-60px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.85rem] font-bold leading-tight"
+          className="text-[1.75rem] sm:text-[2.1rem] lg:text-[2.36rem] font-bold leading-tight"
         >{heading}</motion.h2>
       </div>
 

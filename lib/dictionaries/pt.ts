@@ -40,21 +40,33 @@ export const pt: Dictionary = {
     cards: [
       {
         title: "Atendimento no limite",
-        description: "Cada minuto de demora no atendimento é um lead a menos fechando com o concorrente.",
+        description: "Cada minuto de demora no atendimento é mais um lead fechando com o concorrente.",
       },
       {
-        title: "Dados desorganizados, decisões travadas",
-        description: "Um dado na planilha, outro no CRM, outro na cabeça de alguém: a decisão vira chute.",
+        title: "Dados incompletos, decisões travadas",
+        description: "Um dado na planilha, outro no CRM, outro na cabeça de alguém. O que importa nem foi anotado, e o que foi ninguém validou: a decisão vira chute.",
       },
       {
-        title: "IA solta não resolve nada",
-        description: "Adicionar mais uma ferramenta desconectada só empilha complexidade, sem entregar valor real.",
+        title: "Agenda vazia",
+        description: "Seu time passa o dia montando lista e mandando mensagem, e sobra pouco tempo para vender.",
+      },
+      {
+        title: "Base esquecida",
+        description: "O lead que não fechou há seis meses virou só mais um contato parado no CRM.",
+      },
+      {
+        title: "Suporte sobrecarregado",
+        description: "Seu time responde a mesma dúvida dezenas de vezes por dia.",
+      },
+      {
+        title: "Venda abandonada",
+        description: "O cliente coloca o produto no carrinho, some, e ninguém vai atrás.",
       },
     ],
   },
   services: {
     eyebrow: "O Que Fazemos",
-    heading: "Os principais casos de uso em automações comerciais.",
+    heading: "IA trabalhando em cada etapa da sua operação comercial.",
     subhead:
       "Auditamos processos que tomam tempo da sua equipe e desenhamos automações decisivas para o seu resultado.",
   },
@@ -71,36 +83,37 @@ export const pt: Dictionary = {
   },
   process: {
     eyebrow: "Como Trabalhamos",
-    heading: "Da primeira conversa à produção.",
+    heading: "Da primeira conversa ao sistema rodando.",
     steps: [
       {
         title: "Auditoria",
         description:
-          "Mapeamos sua operação, seus gargalos e onde a IA realmente faz diferença, e saímos com um plano claro do que fazer.",
+          "Mapeamos sua operação, seus gargalos e onde a IA faz diferença, e saímos com um plano claro do que fazer.",
       },
       {
         title: "Escopo e arquitetura",
         description:
-          "Priorizamos os agentes e automações com maior impacto no seu faturamento, e mapeamos os requisitos técnicos, integrações, fluxo de dados, tudo. Um time multidisciplinar desenha esse plano: gente que entende do seu negócio tanto quanto entende de código.",
+          "Priorizamos as automações com maior impacto no seu faturamento e desenhamos como cada uma vai se conectar às ferramentas que você já usa.",
       },
       {
-        title: "Build e deploy",
+        title: "Construção e lançamento",
         description:
-          "Desenvolvemos e testamos o projeto do zero. As integrações conectam em qualquer front-end ou canal de comunicação que sua empresa já usa.",
+          "Desenvolvemos e testamos tudo do zero, conectado ao seu CRM e aos canais que sua empresa já usa.",
       },
       {
-        title: "Suporte e Educação",
+        title: "Suporte e treinamento",
         description:
-          "Continuamos depois do lançamento: monitoramos, ajustamos e evoluímos o sistema conforme sua empresa muda. Também levamos cursos práticos pro seu time, pra usar IA no dia a dia sem depender de ninguém.",
+          "Continuamos depois do lançamento: monitoramos, ajustamos e evoluímos o sistema conforme sua empresa muda. E treinamos seu time para tirar o máximo dele no dia a dia.",
       },
     ],
   },
   about: {
     eyebrow: "Sobre a RightFlows",
-    heading: "Foco em resultados tangíveis.",
+    heading: "Automação comercial de ponta a ponta, do primeiro contato ao pós-venda.",
     paragraphs: [
-      "A RightFlows nasceu em 2024 pra resolver um gargalo clássico do comercial: gerenciamento de leads que não escalam junto com a empresa. Construímos agentes de IA que respondem na hora, qualificam o lead certo e levam ele pronto até a agenda do seu time. Também reativamos base parada, convertendo quem já te conhece em venda de novo. Programamos follow-up inteligente que aborda o lead na hora certa, antes que ele esfrie. E temos agentes conversacionais que atendem vendas e suporte, mantendo o padrão de conversa que o cliente espera.",
-      "É essa combinação, resposta rápida, qualificação certa e eficiência operacional, que aumenta a conversão. Nosso diferencial é te dar controle disso tudo: dashboards, controles e dados em tempo real, pra que seu time acompanhe e ajuste sem precisar entender de código.",
+      "A RightFlows nasceu em 2024 de um problema clássico do comercial: o processo que funcionava com poucos leads trava quando a empresa cresce. O lead espera, o vendedor perde tempo com tarefa manual e a venda vai para o concorrente.",
+      "Por isso atuamos em todas as frentes da operação. Na entrada, agentes de IA atendem e qualificam o lead em menos de 1 minuto e levam ele pronto até a agenda do seu time. Na prospecção, montamos listas com os decisores certos e uma mensagem para cada um. Na base que você já tem, reativamos leads e clientes parados. Depois da reunião, assistentes analisam a call, atualizam o CRM e geram a proposta. No suporte, agentes respondem na hora com base nos seus documentos. E no e-commerce, automatizamos do carrinho abandonado ao rastreio do pedido.",
+      "Nosso diferencial é que você não fica no escuro: dashboards e dados em tempo real mostram o que está acontecendo, e seu time acompanha e ajusta sem precisar entender de código.",
     ],
     stackLabel: "Nossa Stack",
   },
