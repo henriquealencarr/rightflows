@@ -19,6 +19,7 @@ export interface ServiceTranslation {
 
 export interface ServiceSection {
   label?: string;
+  icon?: "send" | "plug";
   intro?: string;
   bullets?: string[];
 }
@@ -82,11 +83,13 @@ export const services: Service[] = [
         sections: [
           {
             label: "Do perfil ao envio",
+            icon: "send",
             intro:
               "Encontramos os decisores com o perfil do seu cliente ideal e entregamos a lista limpa no seu CRM, com contato completo e uma mensagem para cada um. Você aprova e nós disparamos, ou sua equipe envia.",
           },
           {
             label: "Prefere rodar internamente?",
+            icon: "plug",
             intro:
               "No plug and play, instalamos no seu ambiente um sistema que gera as listas e as mensagens prontas. Seu time usa quando quiser, sem depender da gente.",
           },

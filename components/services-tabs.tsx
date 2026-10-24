@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, PresenceContext, useInView } from "framer-motion";
+import { PlugZap, Send } from "lucide-react";
 import {
   AnimatedMessageCircle,
   AnimatedFileSearch,
@@ -56,8 +57,12 @@ interface Service {
   title: string;
   lead?: string;
   description?: string;
-  sections?: { label?: string; intro?: string; bullets?: string[] }[];
+  sections?: { label?: string; icon?: SectionIconKey; intro?: string; bullets?: string[] }[];
 }
+
+// Sections can show an icon in place of their number.
+const sectionIconMap = { send: Send, plug: PlugZap };
+type SectionIconKey = keyof typeof sectionIconMap;
 
 
 // Bullets written as "Label: text" get the label in bold.
@@ -83,6 +88,7 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
         // Number the blocks only when there is more than one.
         const numbered = sections.length > 1;
         const hasBullets = !!section.bullets?.length;
+        const SectionIcon = section.icon ? sectionIconMap[section.icon] : null;
         return (
         <div
           key={si}
@@ -97,7 +103,7 @@ function ServiceSections({ sections }: { sections?: Service["sections"] }) {
                     className="shrink-0 w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-2xl font-extrabold text-purple-400"
                     style={{ background: "rgba(124,58,237,0.08)" }}
                   >
-                    {si + 1}
+                    {SectionIcon ? <SectionIcon className="w-5 h-5" strokeWidth={1.75} /> : si + 1}
                   </div>
                   {section.label && (
                     <h4 className="text-[1.25rem] font-semibold text-white">{section.label}</h4>
