@@ -140,8 +140,13 @@ export const services: Service[] = [
       },
       pt: {
         title: "Assistentes de Reunião",
-        description:
-          "Agentes que analisam suas reuniões de vendas e avaliam o desempenho do time automaticamente. Registram os dados da reunião direto no CRM, mantendo o histórico do lead atualizado. E geram a proposta comercial pronta, com base no que foi discutido.",
+        lead: "Saiba como seu time vende sem precisar assistir a cada call.",
+        sections: [
+          {
+            intro:
+              "Agentes que analisam suas reuniões de vendas e avaliam o desempenho do time automaticamente. Registram os dados da reunião direto no CRM, mantendo o histórico do lead atualizado. E geram a proposta comercial pronta, com base no que foi discutido.",
+          },
+        ],
       },
     },
   },
